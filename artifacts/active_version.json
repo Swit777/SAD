@@ -1,0 +1,39 @@
+{
+  "model_file": "artifacts/model.joblib",
+  "model_sha256": "1c1e09fa3d5c94b97681e3d2bd4e34f5f7fed1e65102e6f77e70fe57cfd095d1",
+  "protocol_file": "protocols/v2.json",
+  "protocol_sha256": "75bd27775c78cbdb6e797cb2f29c0712bb1f0f78b71a188863a800098d1d6e16",
+  "report_file": "reports/training_report.json",
+  "report_sha256": "3a9531577ed812761c64e9a3f44d8625492d6769b0fdbb11c50cba854386d274",
+  "fingerprints": {
+    "full": "dd47d1351cfb136f9438286a40dec12a2a7d68fdb9afd59a948996b58ce360b2",
+    "short_prose": "faecb90b7b497f5bf1c42df8d0552c2665727d22b3e7dcec1540e188e6adea54",
+    "headline": "b83a89b219014a5890c115b77a192528ff9e23d48dfa9fe4be77eced8f88e5f8"
+  },
+  "baseline_model_sha256": "59100ac83956c22a58ab5161624142f910d156373513a7da3265e63db63cee89",
+  "data_files": {
+    "data/processed/corpus_v3/articles.parquet": "493a8c886b8f82380a832b2a82345344853b798169aebcbf4b7d1b85e81ae293",
+    "data/processed/training_roles.parquet": "0c4962bae46992bbea9babfc2e18c3c19d161c286b0a7735bdf48c3e1ac02525",
+    "data/raw/fakeNewsDatasets.zip": "649dd52b0378b0f95a68afd4e55cfe8e3c70a6bd9d647e10194ebb69fb562f77"
+  },
+  "source_files": {
+    "news15/training.py": "9349b8e7aaaa09a5f8f7887fa26568592e3f089111c8bfd1e9a9e3663d0efa49",
+    "news15/model.py": "7e78f91021340a63175dcaae3ee85e0a2abca3c112177f193f95fa9ba3161d12",
+    "news15/consensus.py": "c99bd726799b963ca2f0cda8d36e3a579ddd701506db202588db5d4f85014530",
+    "news15/audit.py": "e1c4f6d2dc37b51ae0e5c2b7090745c3ea25f1d16c1bafab027693038ea1d392",
+    "news15/release_checks.py": "cc97952479ed7d8555730fcc6288999e8e42854b27e59fbd085c49fd1fd1dde6",
+    "scripts/train.py": "ec1bf965c65b5f786ddf4eedfcb10485942631c938d7ad47f0a211cd7cd1c3b2",
+    "scripts/verify_version.py": "52ca5361415c6c83c5ad6258df96e13941c86c53a7a4d63ea8d8e274110415d9",
+    "app.py": "e052e977b253660ebbd7fd4a1de4ab6b4c9ed383905b51a3d3720616cd8ddc3e",
+    "news15/experiments.py": "d5776e4ad7c4f0461cafca349077a3883924fa84d34fa9054f5d85b57c7b0975",
+    "scripts/check_updated_ui.py": "b9c341996cd8ea4b3c09b0909fab2b110fe6f5d68e0e219dcb076795644ae4fd",
+    "scripts/validate_corpus_v4.py": "fc99ad706fb1f4fe1297f787452b1d98c95c5ce33c8f2031af92ed40594f0c59",
+    "tests/test_audit.py": "3ca24850e93c43110ce2958212d0c20e6d73c1c04870aa1e31f1a93e63ecb9d9",
+    "README.md": "b471d9a660272ec0928a5b34adb26fe155754f022670c3dffa0c14cedfdcabf3"
+  },
+  "corpus_import_model_sha256": "2e6d20502b10dcc654c3d12a81be0c3db305262782bafabe78966aafe5b38287",
+  "deliverables": {
+    "deliverables/SAD_Britcov_Denis_SD_251M.pptx": "e63e2a62877ea1be2596aebe253fe8cd0106c9b39f72bf779385181c85b7f683",
+    "deliverables/SAD_Britcov_Denis_SD_251M.docx": "b7730f97a694f129da79ca4ba07a3ca7d75204cecc1881fa6117618d533139aa"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "python": "3.14.2",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "packages": {
+    "streamlit": "1.55.0",
+    "scikit-learn": "1.8.0",
+    "pandas": "2.3.3",
+    "numpy": "2.4.3",
+    "scipy": "1.17.1",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.8",
+    "plotly": "6.6.0",
+    "requests": "2.32.5",
+    "pyarrow": "23.0.1",
+    "imbalanced-learn": "0.14.2"
+  }
+}

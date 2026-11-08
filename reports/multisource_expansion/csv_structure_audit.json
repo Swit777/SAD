@@ -1,0 +1,15 @@
+{
+  "source": "data/raw/fakenewscorpus/news.csv.z01",
+  "source_sha256": "25a671f879ca207757905b9087066fc801a272dda64bcbe943a8d2ee75686b51",
+  "scope": "One-off complete structural preflight of the downloaded first ZIP volume, before the retained-article limit.",
+  "parser": "Strict CSV with complete LF/CR physical lines; report field-count mismatches; incomplete quoted archive tail excluded.",
+  "parsed_records": 888138,
+  "valid_shaped_records": 888078,
+  "invalid_shaped_records": 60,
+  "source_bytes_read": 1073741824,
+  "volume_bytes": 1073741824,
+  "distinct_domains_in_valid_records": 392,
+  "end_condition": "unexpected end of data at the end of the intentionally incomplete first ZIP volume",
+  "full_member_crc_verified": false,
+  "limitation": "A structural record is not necessarily a genuine news article; field shape does not validate truth or source quality."
+}

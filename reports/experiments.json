@@ -1,0 +1,434 @@
+{
+  "metadata": {
+    "model_created_at_utc": "2026-11-07T22:07:48.718156+00:00",
+    "model_name": "Format-calibrated consensus with regularized stacking",
+    "seed": 42,
+    "requested_sample_size": 400,
+    "train_sample_n": 1200,
+    "heldout_sample_n": 400,
+    "heldout_split": "test",
+    "main_model_threshold": 0.65,
+    "full_article_n": 33995,
+    "original_real_count": 16496,
+    "original_fake_count": 17499,
+    "original_fake_fraction": 0.5147521694366819,
+    "sampling": "Deterministic label-stratified sampling; no oversampling of held-out articles.",
+    "model_selection": "Fixed experiment settings; no tuning or fitting on test data. The main model and its threshold must already have been selected using training/validation only.",
+    "limitation": "Historical corpus experiments do not establish real-world truth detection, political fairness, or deployment performance. All perturbations and oversampling are explicitly synthetic experiments."
+  },
+  "baseline_metrics": {
+    "n": 400,
+    "real_count": 195,
+    "fake_count": 205,
+    "accuracy": 0.955,
+    "balanced_accuracy": 0.9552220137585992,
+    "f1_macro": 0.9549898727213624,
+    "precision_fake": 0.9651741293532339,
+    "recall_fake": 0.9463414634146341,
+    "f1_fake": 0.9556650246305419,
+    "false_positive_rate": 0.035897435897435895,
+    "false_negative_rate": 0.05365853658536585,
+    "roc_auc": 0.9926704190118825,
+    "average_precision": 0.9930706250940757,
+    "brier_score": 0.03329060890919906
+  },
+  "bias": {
+    "by_subject": [
+      {
+        "group": "ISOT_overlap",
+        "n": 218,
+        "real_count": 99,
+        "fake_count": 119,
+        "accuracy": 0.9633027523,
+        "balanced_accuracy": 0.9646889059,
+        "f1_macro": 0.9631040027,
+        "precision_fake": 0.9826086957,
+        "recall_fake": 0.9495798319,
+        "f1_fake": 0.9658119658,
+        "false_positive_rate": 0.0202020202,
+        "false_negative_rate": 0.0504201681,
+        "roc_auc": 0.9966895849,
+        "average_precision": 0.9972158393,
+        "brier_score": 0.0241038794
+      },
+      {
+        "group": "WELFake",
+        "n": 182,
+        "real_count": 96,
+        "fake_count": 86,
+        "accuracy": 0.9450549451,
+        "balanced_accuracy": 0.9448885659,
+        "f1_macro": 0.9448885659,
+        "precision_fake": 0.9418604651,
+        "recall_fake": 0.9418604651,
+        "f1_fake": 0.9418604651,
+        "false_positive_rate": 0.0520833333,
+        "false_negative_rate": 0.0581395349,
+        "roc_auc": 0.9874031008,
+        "average_precision": 0.9866513515,
+        "brier_score": 0.0442944937
+      }
+    ],
+    "by_length": [
+      {
+        "group": "0-100 words",
+        "n": 31,
+        "real_count": 11,
+        "fake_count": 20,
+        "accuracy": 0.9677419355,
+        "balanced_accuracy": 0.975,
+        "f1_macro": 0.9654403567,
+        "precision_fake": 1.0,
+        "recall_fake": 0.95,
+        "f1_fake": 0.9743589744,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.05,
+        "roc_auc": 1.0,
+        "average_precision": 1.0,
+        "brier_score": 0.0127463721
+      },
+      {
+        "group": "101-300 words",
+        "n": 84,
+        "real_count": 37,
+        "fake_count": 47,
+        "accuracy": 0.9166666667,
+        "balanced_accuracy": 0.9226566993,
+        "f1_macro": 0.9163703598,
+        "precision_fake": 0.9761904762,
+        "recall_fake": 0.8723404255,
+        "f1_fake": 0.9213483146,
+        "false_positive_rate": 0.027027027,
+        "false_negative_rate": 0.1276595745,
+        "roc_auc": 0.9907993099,
+        "average_precision": 0.9927858711,
+        "brier_score": 0.0478866152
+      },
+      {
+        "group": "301-700 words",
+        "n": 169,
+        "real_count": 66,
+        "fake_count": 103,
+        "accuracy": 0.9585798817,
+        "balanced_accuracy": 0.9551338629,
+        "f1_macro": 0.9563742302,
+        "precision_fake": 0.9615384615,
+        "recall_fake": 0.9708737864,
+        "f1_fake": 0.9661835749,
+        "false_positive_rate": 0.0606060606,
+        "false_negative_rate": 0.0291262136,
+        "roc_auc": 0.9891144454,
+        "average_precision": 0.9927656974,
+        "brier_score": 0.0326559807
+      },
+      {
+        "group": "701+ words",
+        "n": 116,
+        "real_count": 81,
+        "fake_count": 35,
+        "accuracy": 0.974137931,
+        "balanced_accuracy": 0.9733686067,
+        "f1_macro": 0.9695564693,
+        "precision_fake": 0.9444444444,
+        "recall_fake": 0.9714285714,
+        "f1_fake": 0.9577464789,
+        "false_positive_rate": 0.024691358,
+        "false_negative_rate": 0.0285714286,
+        "roc_auc": 0.9950617284,
+        "average_precision": 0.9898188645,
+        "brier_score": 0.0291359449
+      }
+    ],
+    "files": {
+      "subject": "C:\\Users\\ден\\Desktop\\SAD\\Perebinos\\tema15_fake_news\\reports\\bias_by_subject.csv",
+      "length": "C:\\Users\\ден\\Desktop\\SAD\\Perebinos\\tema15_fake_news\\reports\\bias_by_length.csv"
+    },
+    "limitation": "These are corpus subgroup quality checks, not evidence of political or demographic fairness. Subject labels are strongly associated with source and target in ISOT; one-class groups have no ROC AUC or balanced accuracy."
+  },
+  "noise": {
+    "results": [
+      {
+        "condition": "original",
+        "n": 400,
+        "real_count": 195,
+        "fake_count": 205,
+        "accuracy": 0.955,
+        "balanced_accuracy": 0.9552220138,
+        "f1_macro": 0.9549898727,
+        "precision_fake": 0.9651741294,
+        "recall_fake": 0.9463414634,
+        "f1_fake": 0.9556650246,
+        "false_positive_rate": 0.0358974359,
+        "false_negative_rate": 0.0536585366,
+        "roc_auc": 0.992670419,
+        "average_precision": 0.9930706251,
+        "brier_score": 0.0332906089,
+        "delta_f1_vs_original": 0.0,
+        "prediction_flip_rate": 0.0,
+        "mean_absolute_probability_change": 0.0
+      },
+      {
+        "condition": "word_dropout_20pct",
+        "n": 400,
+        "real_count": 195,
+        "fake_count": 205,
+        "accuracy": 0.9525,
+        "balanced_accuracy": 0.952532833,
+        "f1_macro": 0.9524759409,
+        "precision_fake": 0.9558823529,
+        "recall_fake": 0.9512195122,
+        "f1_fake": 0.9535452323,
+        "false_positive_rate": 0.0461538462,
+        "false_negative_rate": 0.0487804878,
+        "roc_auc": 0.9894934334,
+        "average_precision": 0.9904371322,
+        "brier_score": 0.0396765285,
+        "delta_f1_vs_original": -0.0021197924,
+        "prediction_flip_rate": 0.0325,
+        "mean_absolute_probability_change": 0.0417696561
+      },
+      {
+        "condition": "uppercase",
+        "n": 400,
+        "real_count": 195,
+        "fake_count": 205,
+        "accuracy": 0.955,
+        "balanced_accuracy": 0.9552220138,
+        "f1_macro": 0.9549898727,
+        "precision_fake": 0.9651741294,
+        "recall_fake": 0.9463414634,
+        "f1_fake": 0.9556650246,
+        "false_positive_rate": 0.0358974359,
+        "false_negative_rate": 0.0536585366,
+        "roc_auc": 0.992670419,
+        "average_precision": 0.9930706251,
+        "brier_score": 0.0332906089,
+        "delta_f1_vs_original": 0.0,
+        "prediction_flip_rate": 0.0,
+        "mean_absolute_probability_change": 0.0
+      },
+      {
+        "condition": "character_typos_8pct_words",
+        "n": 400,
+        "real_count": 195,
+        "fake_count": 205,
+        "accuracy": 0.9525,
+        "balanced_accuracy": 0.9526579112,
+        "f1_macro": 0.9524854487,
+        "precision_fake": 0.9603960396,
+        "recall_fake": 0.9463414634,
+        "f1_fake": 0.9533169533,
+        "false_positive_rate": 0.041025641,
+        "false_negative_rate": 0.0536585366,
+        "roc_auc": 0.9929956223,
+        "average_precision": 0.9936343528,
+        "brier_score": 0.0333134095,
+        "delta_f1_vs_original": -0.0023480713,
+        "prediction_flip_rate": 0.0125,
+        "mean_absolute_probability_change": 0.0162947638
+      }
+    ],
+    "files": {
+      "summary": "C:\\Users\\ден\\Desktop\\SAD\\Perebinos\\tema15_fake_news\\reports\\noise_results.csv",
+      "predictions": "C:\\Users\\ден\\Desktop\\SAD\\Perebinos\\tema15_fake_news\\reports\\noise_predictions.csv"
+    },
+    "limitation": "Controlled synthetic corruption of the same held-out texts measures robustness to these edits only. Uppercase may have no effect because TF-IDF lowercases text. Corrupted texts are not additional real observations."
+  },
+  "source_marker_ablation": {
+    "results": [
+      {
+        "condition": "raw_text",
+        "training_n": 1200,
+        "n": 400,
+        "real_count": 195,
+        "fake_count": 205,
+        "accuracy": 0.905,
+        "balanced_accuracy": 0.9045653533,
+        "f1_macro": 0.9048477564,
+        "precision_fake": 0.8957345972,
+        "recall_fake": 0.9219512195,
+        "f1_fake": 0.9086538462,
+        "false_positive_rate": 0.1128205128,
+        "false_negative_rate": 0.0780487805,
+        "roc_auc": 0.972257661,
+        "average_precision": 0.9726108099,
+        "brier_score": 0.1249565869
+      },
+      {
+        "condition": "source_cleaned_text",
+        "training_n": 1200,
+        "n": 400,
+        "real_count": 195,
+        "fake_count": 205,
+        "accuracy": 0.865,
+        "balanced_accuracy": 0.8647904941,
+        "f1_macro": 0.8648783906,
+        "precision_fake": 0.8647342995,
+        "recall_fake": 0.8731707317,
+        "f1_fake": 0.8689320388,
+        "false_positive_rate": 0.1435897436,
+        "false_negative_rate": 0.1268292683,
+        "roc_auc": 0.9495684803,
+        "average_precision": 0.9494110176,
+        "brier_score": 0.1492422189
+      }
+    ],
+    "source_marker_rates": [
+      {
+        "split": "train",
+        "label": 0,
+        "n": 582,
+        "reuters_marker_rate": 0.4450171821,
+        "cleaned_reuters_marker_rate": 0.0
+      },
+      {
+        "split": "train",
+        "label": 1,
+        "n": 618,
+        "reuters_marker_rate": 0.0226537217,
+        "cleaned_reuters_marker_rate": 0.0
+      },
+      {
+        "split": "test",
+        "label": 0,
+        "n": 195,
+        "reuters_marker_rate": 0.5076923077,
+        "cleaned_reuters_marker_rate": 0.0
+      },
+      {
+        "split": "test",
+        "label": 1,
+        "n": 205,
+        "reuters_marker_rate": 0.0195121951,
+        "cleaned_reuters_marker_rate": 0.0
+      }
+    ],
+    "files": {
+      "summary": "C:\\Users\\ден\\Desktop\\SAD\\Perebinos\\tema15_fake_news\\reports\\source_marker_ablation.csv",
+      "markers": "C:\\Users\\ден\\Desktop\\SAD\\Perebinos\\tema15_fake_news\\reports\\source_marker_rates.csv",
+      "predictions": "C:\\Users\\ден\\Desktop\\SAD\\Perebinos\\tema15_fake_news\\reports\\source_marker_predictions.csv"
+    },
+    "threshold": 0.5,
+    "limitation": "Both models are trained on exactly the same sampled training articles and evaluated on the same held-out articles. Cleaning explicit markers cannot remove all source-style or topic confounding and does not establish factual verification. These sampled ablation models differ from the main full-training model."
+  },
+  "smote": {
+    "results": [
+      {
+        "method": "imbalanced_unweighted",
+        "fit_n": 727,
+        "fit_real_count": 582,
+        "fit_fake_count": 145,
+        "n": 400,
+        "real_count": 195,
+        "fake_count": 205,
+        "accuracy": 0.735,
+        "balanced_accuracy": 0.7409631019,
+        "f1_macro": 0.7215216478,
+        "precision_fake": 0.9626168224,
+        "recall_fake": 0.5024390244,
+        "f1_fake": 0.6602564103,
+        "false_positive_rate": 0.0205128205,
+        "false_negative_rate": 0.4975609756,
+        "roc_auc": 0.9314571607,
+        "average_precision": 0.9373745232,
+        "brier_score": 0.1786447555
+      },
+      {
+        "method": "imbalanced_class_weight",
+        "fit_n": 727,
+        "fit_real_count": 582,
+        "fit_fake_count": 145,
+        "n": 400,
+        "real_count": 195,
+        "fake_count": 205,
+        "accuracy": 0.845,
+        "balanced_accuracy": 0.846779237,
+        "f1_macro": 0.8446115288,
+        "precision_fake": 0.9085714286,
+        "recall_fake": 0.7756097561,
+        "f1_fake": 0.8368421053,
+        "false_positive_rate": 0.0820512821,
+        "false_negative_rate": 0.2243902439,
+        "roc_auc": 0.9334584115,
+        "average_precision": 0.9370731841,
+        "brier_score": 0.1124136541
+      },
+      {
+        "method": "imbalanced_smote",
+        "fit_n": 1164,
+        "fit_real_count": 582,
+        "fit_fake_count": 582,
+        "n": 400,
+        "real_count": 195,
+        "fake_count": 205,
+        "accuracy": 0.8275,
+        "balanced_accuracy": 0.8303314572,
+        "f1_macro": 0.8260113093,
+        "precision_fake": 0.9303797468,
+        "recall_fake": 0.7170731707,
+        "f1_fake": 0.8099173554,
+        "false_positive_rate": 0.0564102564,
+        "false_negative_rate": 0.2829268293,
+        "roc_auc": 0.9327829894,
+        "average_precision": 0.9381696178,
+        "brier_score": 0.124391409
+      }
+    ],
+    "file": "C:\\Users\\ден\\Desktop\\SAD\\Perebinos\\tema15_fake_news\\reports\\smote_results.csv",
+    "feature_metadata": {
+      "svd_dimensions": 50,
+      "vocabulary_size": 20000,
+      "svd_explained_variance_ratio_sum": 0.10501912236213684,
+      "fit_split": "train only"
+    },
+    "controlled_training_real_count": 582,
+    "controlled_training_fake_count": 145,
+    "controlled_training_fake_fraction": 0.19944979367262725,
+    "synthetic_vector_count": 437,
+    "smote_k_neighbors": 5,
+    "threshold": 0.5,
+    "limitation": "Original ISOT is almost balanced. This experiment deliberately creates a training imbalance with approximately 20% fake articles. SMOTE operates on numeric training SVD features only; synthetic vectors are not real or generated news articles. Held-out articles retain their original distribution. SMOTE and class weights may improve or worsen results; no improvement is assumed."
+  },
+  "decision_boundary": {
+    "metrics": {
+      "n": 400,
+      "real_count": 195,
+      "fake_count": 205,
+      "accuracy": 0.7475,
+      "balanced_accuracy": 0.7486554096310194,
+      "f1_macro": 0.7473089023574078,
+      "precision_fake": 0.782608695652174,
+      "recall_fake": 0.7024390243902439,
+      "f1_fake": 0.7403598971722365,
+      "false_positive_rate": 0.20512820512820512,
+      "false_negative_rate": 0.2975609756097561,
+      "roc_auc": 0.8559099437148218,
+      "average_precision": 0.860843534904655,
+      "brier_score": 0.15907269808068636
+    },
+    "files": {
+      "points": "C:\\Users\\ден\\Desktop\\SAD\\Perebinos\\tema15_fake_news\\reports\\decision_boundary_points.csv",
+      "surface": "C:\\Users\\ден\\Desktop\\SAD\\Perebinos\\tema15_fake_news\\reports\\decision_boundary_surface.csv"
+    },
+    "coefficients": [
+      -0.5809979399516458,
+      1.4806453411114369
+    ],
+    "intercept": -0.021745842667368336,
+    "threshold": 0.5,
+    "grid_shape": [
+      75,
+      75
+    ],
+    "axis_labels": [
+      "Training SVD component 1 (standardized)",
+      "Training SVD component 2 (standardized)"
+    ],
+    "limitation": "Educational surrogate: a separate logistic classifier fitted on two training SVD components. This is its real 2D boundary, not the boundary of the full TF-IDF production model. The plotted grid clips extreme coordinates at the 1st/99th percentiles; complete point coordinates remain in CSV. No test labels are used to fit the projection or classifier."
+  },
+  "streaming_rtap": {
+    "implemented_here": false,
+    "note": "Streaming replay and adaptive review thresholds belong to the application streaming module. These offline experiments do not claim a live news or fact-checking feed."
+  },
+  "report_file": "C:\\Users\\ден\\Desktop\\SAD\\Perebinos\\tema15_fake_news\\reports\\experiments.json"
+}

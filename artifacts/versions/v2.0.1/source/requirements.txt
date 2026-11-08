@@ -1,0 +1,11 @@
+streamlit>=1.55,<2
+scikit-learn>=1.8,<1.9
+pandas>=2.3,<3
+numpy>=2.4,<3
+scipy>=1.17,<2
+joblib>=1.5,<2
+matplotlib>=3.10,<4
+plotly>=6,<7
+requests>=2.32,<3
+pyarrow>=23,<24
+imbalanced-learn>=0.14,<0.15

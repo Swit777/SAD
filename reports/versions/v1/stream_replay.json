@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "experiment": "prequential_archive_replay",
+  "feedback_source": "oracle feedback simulation",
+  "events": 600,
+  "requested_limit": 600,
+  "real_count": 526,
+  "fake_count": 74,
+  "start_date": "2017-11-03T00:00:00",
+  "end_date": "2017-11-08T00:00:00",
+  "initial_threshold": 0.6400000000000001,
+  "final_threshold": 0.6100000000000001,
+  "threshold_changes": 1,
+  "policy_parameters": {
+    "initial_threshold": 0.6400000000000001,
+    "review_margin": 0.1,
+    "window_size": 100,
+    "min_feedback": 12,
+    "step": 0.05,
+    "min_threshold": 0.25,
+    "max_threshold": 0.75
+  },
+  "model": {
+    "selected_model": "Logistic regression · balanced",
+    "created_at_utc": "2026-11-07T00:18:51.708164+00:00",
+    "corpus_sha256": "9f9de88b83bc6d88385245134e3ba1bd95dc3f7c2e6d1b797ce582899decbac9",
+    "seed": 42,
+    "preprocessing_version": "isot-temporal-v1"
+  },
+  "metrics": {
+    "fixed": {
+      "accuracy": 0.99,
+      "f1_macro": 0.9768780187031137,
+      "precision_fake": 0.9594594594594594,
+      "recall_fake": 0.9594594594594594,
+      "review_fraction": 0.013333333333333334,
+      "automatic_fraction": 0.9866666666666667,
+      "automatic_accuracy": 0.9966216216216216
+    },
+    "adaptive": {
+      "accuracy": 0.99,
+      "f1_macro": 0.9768780187031137,
+      "precision_fake": 0.9594594594594594,
+      "recall_fake": 0.9594594594594594,
+      "review_fraction": 0.01,
+      "automatic_fraction": 0.99,
+      "automatic_accuracy": 0.9949494949494949
+    }
+  },
+  "drift": {
+    "reference_count": 5926,
+    "current_count": 600,
+    "ks_statistic": 0.032675216559793004,
+    "p_value": 0.5930872315078013,
+    "score_shift": 0.0029972796258404544,
+    "warning": false,
+    "interpretation": "Выраженное изменение распределения оценок не обнаружено."
+  },
+  "threshold_history": [
+    {
+      "feedback_count": 82,
+      "previous_threshold": 0.6400000000000001,
+      "threshold": 0.6100000000000001,
+      "f1_before": 0.9633109619686802,
+      "f1_after": 1.0
+    }
+  ],
+  "protocol": {
+    "ordering": "Publication date ascending, then article id ascending; first N test articles.",
+    "probabilities": "Previously saved test probabilities; no repeated inference or model fitting.",
+    "prediction_timing": "Current predictions and review decisions are fixed before observing the current label.",
+    "feedback_timing": "The dataset label becomes oracle feedback immediately after each prediction.",
+    "adapted_parameter": "Decision threshold only; classifier coefficients remain fixed.",
+    "reference": "Saved validation probabilities are used solely for score-distribution monitoring.",
+    "metric_scope": "Binary metrics cover every event, including its underlying class prediction when sent for review. automatic_accuracy covers only non-review decisions."
+  },
+  "limitations": [
+    "Oracle corpus labels simulate immediate perfect feedback; this is not a live user-feedback or fact-checking evaluation.",
+    "Threshold adaptation uses earlier test labels sequentially. These are prequential metrics, not unchanged offline hold-out metrics.",
+    "The first N chronological test articles may not represent the complete test distribution.",
+    "No improvement is guaranteed, and ISOT source-confounding and language limitations remain.",
+    "Drift monitors scores, not truth or verified changes in accuracy."
+  ],
+  "files": {
+    "csv": "C:\\Users\\ден\\Desktop\\SAD\\Perebinos\\tema15_fake_news\\reports\\stream_replay.csv",
+    "json": "C:\\Users\\ден\\Desktop\\SAD\\Perebinos\\tema15_fake_news\\reports\\stream_replay.json"
+  }
+}

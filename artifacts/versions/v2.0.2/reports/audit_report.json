@@ -1,0 +1,1412 @@
+{
+  "version": "2.0.0",
+  "created_at_utc": "2026-11-07T00:49:19.308122+00:00",
+  "protocol_sha256": "b29078acfd46bc4fd753120321df6fa3321be390cc6eb1982151d15f53fb61fe",
+  "problem": "Research assistance for manual review of English news, not autonomous truth adjudication.",
+  "kpi": {
+    "macro_f1_min": 0.7,
+    "macro_f1_ci_lower_min": 0.65,
+    "automatic_precision_wilson_lower_min": 0.9,
+    "coverage_min": 0.5
+  },
+  "partitions": {
+    "calibration_fusion": {
+      "n": 1251,
+      "real": 1116,
+      "fake": 135,
+      "start": "2017-10-13T00:00:00",
+      "end": "2017-10-23T00:00:00"
+    },
+    "calibration_members": {
+      "n": 1157,
+      "real": 1029,
+      "fake": 128,
+      "start": "2017-10-03T00:00:00",
+      "end": "2017-10-12T00:00:00"
+    },
+    "internal_reused_test": {
+      "n": 5907,
+      "real": 5235,
+      "fake": 672,
+      "start": "2017-11-03T00:00:00",
+      "end": "2018-02-19T00:00:00"
+    },
+    "policy": {
+      "n": 1258,
+      "real": 1100,
+      "fake": 158,
+      "start": "2017-10-24T00:00:00",
+      "end": "2017-11-02T00:00:00"
+    },
+    "train": {
+      "n": 27248,
+      "real": 10747,
+      "fake": 16501,
+      "start": "2015-03-31T00:00:00",
+      "end": "2017-09-13T00:00:00"
+    },
+    "tuning": {
+      "n": 2259,
+      "real": 1960,
+      "fake": 299,
+      "start": "2017-09-14T00:00:00",
+      "end": "2017-10-02T00:00:00"
+    }
+  },
+  "contamination_exclusions": 3,
+  "internal_test_status": "Previously inspected v1 test; reused diagnostic after stronger contamination filtering.",
+  "before": {
+    "internal_full_text": {
+      "metrics": {
+        "accuracy": 0.9803622820382597,
+        "f1_macro": 0.9478149372784915,
+        "f1_fake": 0.9066022544283414,
+        "precision": 0.987719298245614,
+        "recall": 0.8377976190476191,
+        "roc_auc": 0.9971952176285988,
+        "average_precision": 0.9856902659686486,
+        "brier": 0.010908447608187048,
+        "log_loss": 0.039745026883421304,
+        "confusion_matrix": [
+          [
+            5228,
+            7
+          ],
+          [
+            109,
+            563
+          ]
+        ],
+        "rows": 5907,
+        "threshold": 0.75,
+        "macro_f1_ci95": [
+          0.9387415095787331,
+          0.9574353370071794
+        ],
+        "ci_method": "200 label-stratified article bootstraps; no publisher clustering available.",
+        "ece_10_bins": 0.00855890456438156,
+        "primary_uncalibrated_brier": 0.012190497520750364
+      },
+      "selective_policy": {
+        "coverage": 0.9646182495344506,
+        "review_fraction": 0.035381750465549346,
+        "automatic_fake_n": 498,
+        "automatic_real_n": 5200,
+        "automatic_fake_precision": 0.9959839357429718,
+        "automatic_real_precision": 0.9953846153846154,
+        "fake_precision_wilson_lower": 0.9854763707595615,
+        "real_precision_wilson_lower": 0.9931413586494232,
+        "automatic_errors": 26,
+        "false_fake": 2,
+        "false_real": 24,
+        "automatic_accuracy": 0.9954369954369955,
+        "cost_per_article": 0.01106314542068732,
+        "mean_agreement": 0.9874160600417584
+      },
+      "agreement": {
+        "pairwise": [
+          {
+            "first": "logistic",
+            "second": "logistic",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.007956661587946504
+          },
+          {
+            "first": "logistic",
+            "second": "sgd",
+            "prediction_agreement": 0.9925512104283054,
+            "cohen_kappa": 0.9621741055302695,
+            "both_wrong_fraction": 0.007279498899610631
+          },
+          {
+            "first": "logistic",
+            "second": "complement_nb",
+            "prediction_agreement": 0.97866937531742,
+            "cohen_kappa": 0.8899205746571897,
+            "both_wrong_fraction": 0.006094464195022855
+          },
+          {
+            "first": "sgd",
+            "second": "logistic",
+            "prediction_agreement": 0.9925512104283054,
+            "cohen_kappa": 0.9621741055302695,
+            "both_wrong_fraction": 0.007279498899610631
+          },
+          {
+            "first": "sgd",
+            "second": "sgd",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.014051125782969359
+          },
+          {
+            "first": "sgd",
+            "second": "complement_nb",
+            "prediction_agreement": 0.984425258168275,
+            "cohen_kappa": 0.9183846454209593,
+            "both_wrong_fraction": 0.01201963771796174
+          },
+          {
+            "first": "complement_nb",
+            "second": "logistic",
+            "prediction_agreement": 0.97866937531742,
+            "cohen_kappa": 0.8899205746571897,
+            "both_wrong_fraction": 0.006094464195022855
+          },
+          {
+            "first": "complement_nb",
+            "second": "sgd",
+            "prediction_agreement": 0.984425258168275,
+            "cohen_kappa": 0.9183846454209593,
+            "both_wrong_fraction": 0.01201963771796174
+          },
+          {
+            "first": "complement_nb",
+            "second": "complement_nb",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.025562891484679193
+          }
+        ],
+        "unanimous_n": 5776,
+        "unanimous_wrong_fraction": 0.006232686980609419,
+        "interpretation": "Correlated models trained on one corpus are not independent fact-checkers."
+      }
+    },
+    "internal_headlines": {
+      "metrics": {
+        "accuracy": 0.9592009480277637,
+        "f1_macro": 0.8889682871158437,
+        "f1_fake": 0.8006617038875103,
+        "precision": 0.9013035381750466,
+        "recall": 0.7202380952380952,
+        "roc_auc": 0.9661737617683177,
+        "average_precision": 0.8854443989110142,
+        "brier": 0.08551816783690812,
+        "log_loss": 0.28673545234168596,
+        "confusion_matrix": [
+          [
+            5182,
+            53
+          ],
+          [
+            188,
+            484
+          ]
+        ],
+        "rows": 5907,
+        "threshold": 0.75,
+        "macro_f1_ci95": [
+          0.8751477738196995,
+          0.9027745223560428
+        ],
+        "ci_method": "200 label-stratified article bootstraps; no publisher clustering available.",
+        "ece_10_bins": 0.1754834284134878,
+        "primary_uncalibrated_brier": 0.34330150300438084
+      },
+      "selective_policy": {
+        "coverage": 0.49974606399187405,
+        "review_fraction": 0.500253936008126,
+        "automatic_fake_n": 299,
+        "automatic_real_n": 2653,
+        "automatic_fake_precision": 0.979933110367893,
+        "automatic_real_precision": 0.9958537504711648,
+        "fake_precision_wilson_lower": 0.9569185189342668,
+        "real_precision_wilson_lower": 0.9925903409039865,
+        "automatic_errors": 17,
+        "false_fake": 6,
+        "false_real": 11,
+        "automatic_accuracy": 0.9942411924119241,
+        "cost_per_article": 0.08197900795666159,
+        "mean_agreement": 0.7254669601038316
+      },
+      "agreement": {
+        "pairwise": [
+          {
+            "first": "logistic",
+            "second": "logistic",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.414931437277806
+          },
+          {
+            "first": "logistic",
+            "second": "sgd",
+            "prediction_agreement": 0.8914846791941764,
+            "cohen_kappa": 0.7836296254940767,
+            "both_wrong_fraction": 0.3340104960216692
+          },
+          {
+            "first": "logistic",
+            "second": "complement_nb",
+            "prediction_agreement": 0.5618757406466903,
+            "cohen_kappa": 0.1575993416549285,
+            "both_wrong_fraction": 0.010496021669206027
+          },
+          {
+            "first": "sgd",
+            "second": "logistic",
+            "prediction_agreement": 0.8914846791941764,
+            "cohen_kappa": 0.7836296254940767,
+            "both_wrong_fraction": 0.3340104960216692
+          },
+          {
+            "first": "sgd",
+            "second": "sgd",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.361604875571356
+          },
+          {
+            "first": "sgd",
+            "second": "complement_nb",
+            "prediction_agreement": 0.6175723717623159,
+            "cohen_kappa": 0.1932414547213791,
+            "both_wrong_fraction": 0.011681056373793804
+          },
+          {
+            "first": "complement_nb",
+            "second": "logistic",
+            "prediction_agreement": 0.5618757406466903,
+            "cohen_kappa": 0.1575993416549285,
+            "both_wrong_fraction": 0.010496021669206027
+          },
+          {
+            "first": "complement_nb",
+            "second": "sgd",
+            "prediction_agreement": 0.6175723717623159,
+            "cohen_kappa": 0.1932414547213791,
+            "both_wrong_fraction": 0.011681056373793804
+          },
+          {
+            "first": "complement_nb",
+            "second": "complement_nb",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.04418486541391569
+          }
+        ],
+        "unanimous_n": 3163,
+        "unanimous_wrong_fraction": 0.019285488460322478,
+        "interpretation": "Correlated models trained on one corpus are not independent fact-checkers."
+      }
+    },
+    "external_raw_headlines": {
+      "metrics": {
+        "accuracy": 0.5741495968115673,
+        "f1_macro": 0.4857361077042812,
+        "f1_fake": 0.2725041564405035,
+        "precision": 0.2313482995026213,
+        "recall": 0.3314714946070878,
+        "roc_auc": 0.5042583751359018,
+        "average_precision": 0.23455306172953955,
+        "brier": 0.3832033834261153,
+        "log_loss": 1.0665070172865985,
+        "confusion_matrix": [
+          [
+            10668,
+            5718
+          ],
+          [
+            3471,
+            1721
+          ]
+        ],
+        "rows": 21578,
+        "threshold": 0.75,
+        "macro_f1_ci95": [
+          0.4793354346953631,
+          0.49142151538739764
+        ],
+        "ci_method": "200 label-stratified article bootstraps; no publisher clustering available.",
+        "ece_10_bins": 0.405155482355346,
+        "publisher_cluster_macro_f1_ci95": [
+          0.4713528197847636,
+          0.4983120571189105
+        ],
+        "publisher_domains": 2414,
+        "publisher_cluster_method": "500 domain-block bootstraps of already frozen predictions; unknown domains grouped together. Not a retuning or a new external test."
+      },
+      "selective_policy": {
+        "coverage": 0.12489572712948373,
+        "review_fraction": 0.8751042728705163,
+        "automatic_fake_n": 1951,
+        "automatic_real_n": 744,
+        "automatic_fake_precision": 0.20246027678113787,
+        "automatic_real_precision": 0.8266129032258065,
+        "fake_precision_wilson_lower": 0.18522201843779998,
+        "real_precision_wilson_lower": 0.7977494902196782,
+        "automatic_errors": 1685,
+        "false_fake": 1556,
+        "false_real": 129,
+        "automatic_accuracy": 0.3747680890538033,
+        "cost_per_article": 0.49779636666975624,
+        "mean_agreement": 0.5604319214014274
+      },
+      "agreement": {
+        "pairwise": [
+          {
+            "first": "logistic",
+            "second": "logistic",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.7221243859486514
+          },
+          {
+            "first": "logistic",
+            "second": "sgd",
+            "prediction_agreement": 0.9701084437853369,
+            "cohen_kappa": 0.6863640880851656,
+            "both_wrong_fraction": 0.7120215033830753
+          },
+          {
+            "first": "logistic",
+            "second": "complement_nb",
+            "prediction_agreement": 0.44883677820001855,
+            "cohen_kappa": 0.06990518378617161,
+            "both_wrong_fraction": 0.3149504124571323
+          },
+          {
+            "first": "sgd",
+            "second": "logistic",
+            "prediction_agreement": 0.9701084437853369,
+            "cohen_kappa": 0.6863640880851656,
+            "both_wrong_fraction": 0.7120215033830753
+          },
+          {
+            "first": "sgd",
+            "second": "sgd",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.7318101770321623
+          },
+          {
+            "first": "sgd",
+            "second": "complement_nb",
+            "prediction_agreement": 0.4368338122161461,
+            "cohen_kappa": 0.05411629001187923,
+            "both_wrong_fraction": 0.3137918250069515
+          },
+          {
+            "first": "complement_nb",
+            "second": "logistic",
+            "prediction_agreement": 0.44883677820001855,
+            "cohen_kappa": 0.06990518378617161,
+            "both_wrong_fraction": 0.3149504124571323
+          },
+          {
+            "first": "complement_nb",
+            "second": "sgd",
+            "prediction_agreement": 0.4368338122161461,
+            "cohen_kappa": 0.05411629001187923,
+            "both_wrong_fraction": 0.3137918250069515
+          },
+          {
+            "first": "complement_nb",
+            "second": "complement_nb",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.4589396607655946
+          }
+        ],
+        "unanimous_n": 9233,
+        "unanimous_wrong_fraction": 0.7273908805372035,
+        "interpretation": "Correlated models trained on one corpus are not independent fact-checkers."
+      }
+    },
+    "policy": {
+      "threshold": 0.75,
+      "margin": 0.15,
+      "consensus": 1.0,
+      "enabled": true
+    }
+  },
+  "after": {
+    "internal_full_text": {
+      "metrics": {
+        "accuracy": 0.9845945488403589,
+        "f1_macro": 0.9609093708878125,
+        "f1_fake": 0.93048128342246,
+        "precision": 0.9560439560439561,
+        "recall": 0.90625,
+        "roc_auc": 0.9961755810251514,
+        "average_precision": 0.9809781405305594,
+        "brier": 0.012543391549812174,
+        "log_loss": 0.045525341005762006,
+        "confusion_matrix": [
+          [
+            5207,
+            28
+          ],
+          [
+            63,
+            609
+          ]
+        ],
+        "rows": 5907,
+        "threshold": 0.4,
+        "macro_f1_ci95": [
+          0.9540222647831315,
+          0.9679558680559649
+        ],
+        "ci_method": "200 label-stratified article bootstraps; no publisher clustering available.",
+        "ece_10_bins": 0.008842870314686264,
+        "primary_uncalibrated_brier": 0.015254642117270715
+      },
+      "selective_policy": {
+        "coverage": 0.9827323514474352,
+        "review_fraction": 0.017267648552564754,
+        "automatic_fake_n": 583,
+        "automatic_real_n": 5222,
+        "automatic_fake_precision": 0.9777015437392796,
+        "automatic_real_precision": 0.9927230945997702,
+        "fake_precision_wilson_lower": 0.9622255160270221,
+        "real_precision_wilson_lower": 0.99002815404013,
+        "automatic_errors": 51,
+        "false_fake": 13,
+        "false_real": 38,
+        "automatic_accuracy": 0.9912144702842377,
+        "cost_per_article": 0.020027086507533435,
+        "mean_agreement": 0.9902940014671857
+      },
+      "agreement": {
+        "pairwise": [
+          {
+            "first": "logistic",
+            "second": "logistic",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.009141696292534281
+          },
+          {
+            "first": "logistic",
+            "second": "sgd",
+            "prediction_agreement": 0.9913661757237177,
+            "cohen_kappa": 0.9563026504564508,
+            "both_wrong_fraction": 0.008633824276282377
+          },
+          {
+            "first": "logistic",
+            "second": "complement_nb",
+            "prediction_agreement": 0.9739292364990689,
+            "cohen_kappa": 0.864732780930504,
+            "both_wrong_fraction": 0.007110208227526663
+          },
+          {
+            "first": "sgd",
+            "second": "logistic",
+            "prediction_agreement": 0.9913661757237177,
+            "cohen_kappa": 0.9563026504564508,
+            "both_wrong_fraction": 0.008633824276282377
+          },
+          {
+            "first": "sgd",
+            "second": "sgd",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.01675977653631285
+          },
+          {
+            "first": "sgd",
+            "second": "complement_nb",
+            "prediction_agreement": 0.979177247333672,
+            "cohen_kappa": 0.8902003294166931,
+            "both_wrong_fraction": 0.013543253766717453
+          },
+          {
+            "first": "complement_nb",
+            "second": "logistic",
+            "prediction_agreement": 0.9739292364990689,
+            "cohen_kappa": 0.864732780930504,
+            "both_wrong_fraction": 0.007110208227526663
+          },
+          {
+            "first": "complement_nb",
+            "second": "sgd",
+            "prediction_agreement": 0.979177247333672,
+            "cohen_kappa": 0.8902003294166931,
+            "both_wrong_fraction": 0.013543253766717453
+          },
+          {
+            "first": "complement_nb",
+            "second": "complement_nb",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.031149483663450144
+          }
+        ],
+        "unanimous_n": 5743,
+        "unanimous_wrong_fraction": 0.007313250914156365,
+        "interpretation": "Correlated models trained on one corpus are not independent fact-checkers."
+      }
+    },
+    "internal_headlines": {
+      "metrics": {
+        "accuracy": 0.6791941764008803,
+        "f1_macro": 0.5936713400041504,
+        "f1_fake": 0.40725680325304975,
+        "precision": 0.25782178217821783,
+        "recall": 0.96875,
+        "roc_auc": 0.9581650520762268,
+        "average_precision": 0.8511422849584911,
+        "brier": 0.13522075506995224,
+        "log_loss": 0.41115816552042556,
+        "confusion_matrix": [
+          [
+            3361,
+            1874
+          ],
+          [
+            21,
+            651
+          ]
+        ],
+        "rows": 5907,
+        "threshold": 0.4,
+        "macro_f1_ci95": [
+          0.5852147579916378,
+          0.6036105167073018
+        ],
+        "ci_method": "200 label-stratified article bootstraps; no publisher clustering available.",
+        "ece_10_bins": 0.2538911702288041,
+        "primary_uncalibrated_brier": 0.47529258499369575
+      },
+      "selective_policy": {
+        "coverage": 0.5561198577958355,
+        "review_fraction": 0.44388014220416455,
+        "automatic_fake_n": 1231,
+        "automatic_real_n": 2054,
+        "automatic_fake_precision": 0.4939073923639318,
+        "automatic_real_precision": 0.9980525803310614,
+        "fake_precision_wilson_lower": 0.4660402127693777,
+        "real_precision_wilson_lower": 0.9950031750033568,
+        "automatic_errors": 627,
+        "false_fake": 623,
+        "false_real": 4,
+        "automatic_accuracy": 0.8091324200913242,
+        "cost_per_article": 0.5945996275605214,
+        "mean_agreement": 0.7454432594097398
+      },
+      "agreement": {
+        "pairwise": [
+          {
+            "first": "logistic",
+            "second": "logistic",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.5556119857795836
+          },
+          {
+            "first": "logistic",
+            "second": "sgd",
+            "prediction_agreement": 0.9004570848146267,
+            "cohen_kappa": 0.7853181878473583,
+            "both_wrong_fraction": 0.4770611139326223
+          },
+          {
+            "first": "logistic",
+            "second": "complement_nb",
+            "prediction_agreement": 0.4176400880311495,
+            "cohen_kappa": 0.08897406509469874,
+            "both_wrong_fraction": 0.011511765701709836
+          },
+          {
+            "first": "sgd",
+            "second": "logistic",
+            "prediction_agreement": 0.9004570848146267,
+            "cohen_kappa": 0.7853181878473583,
+            "both_wrong_fraction": 0.4770611139326223
+          },
+          {
+            "first": "sgd",
+            "second": "sgd",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.4980531572710344
+          },
+          {
+            "first": "sgd",
+            "second": "complement_nb",
+            "prediction_agreement": 0.4772304046047063,
+            "cohen_kappa": 0.11330890051236209,
+            "both_wrong_fraction": 0.012527509734213646
+          },
+          {
+            "first": "complement_nb",
+            "second": "logistic",
+            "prediction_agreement": 0.4176400880311495,
+            "cohen_kappa": 0.08897406509469874,
+            "both_wrong_fraction": 0.011511765701709836
+          },
+          {
+            "first": "complement_nb",
+            "second": "sgd",
+            "prediction_agreement": 0.4772304046047063,
+            "cohen_kappa": 0.11330890051236209,
+            "both_wrong_fraction": 0.012527509734213646
+          },
+          {
+            "first": "complement_nb",
+            "second": "complement_nb",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.04977145759268664
+          }
+        ],
+        "unanimous_n": 2349,
+        "unanimous_wrong_fraction": 0.02894848871860366,
+        "interpretation": "Correlated models trained on one corpus are not independent fact-checkers."
+      }
+    },
+    "external_raw_headlines": {
+      "metrics": {
+        "accuracy": 0.27592918713504494,
+        "f1_macro": 0.24965236949255631,
+        "f1_fake": 0.3900687070580887,
+        "precision": 0.2446141793967881,
+        "recall": 0.9622496147919877,
+        "roc_auc": 0.5050111716435749,
+        "average_precision": 0.23659876017164214,
+        "brier": 0.438929371963012,
+        "log_loss": 1.2224411872907677,
+        "confusion_matrix": [
+          [
+            958,
+            15428
+          ],
+          [
+            196,
+            4996
+          ]
+        ],
+        "rows": 21578,
+        "threshold": 0.4,
+        "macro_f1_ci95": [
+          0.2464950412640854,
+          0.25332372623903965
+        ],
+        "ci_method": "200 label-stratified article bootstraps; no publisher clustering available.",
+        "ece_10_bins": 0.4812195745612355,
+        "publisher_cluster_macro_f1_ci95": [
+          0.21885626751570733,
+          0.2874880342672486
+        ],
+        "publisher_domains": 2414,
+        "publisher_cluster_method": "500 domain-block bootstraps of already frozen predictions; unknown domains grouped together. Not a retuning or a new external test."
+      },
+      "selective_policy": {
+        "coverage": 0.8069793307998888,
+        "review_fraction": 0.1930206692001112,
+        "automatic_fake_n": 17073,
+        "automatic_real_n": 340,
+        "automatic_fake_precision": 0.2491653487963451,
+        "automatic_real_precision": 0.8235294117647058,
+        "fake_precision_wilson_lower": 0.24273416697448646,
+        "real_precision_wilson_lower": 0.7794578181251104,
+        "automatic_errors": 12879,
+        "false_fake": 12819,
+        "false_real": 60,
+        "automatic_accuracy": 0.2603801757307759,
+        "cost_per_article": 3.002120215033831,
+        "mean_agreement": 0.7977260790311119
+      },
+      "agreement": {
+        "pairwise": [
+          {
+            "first": "logistic",
+            "second": "logistic",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.7436741125220132
+          },
+          {
+            "first": "logistic",
+            "second": "sgd",
+            "prediction_agreement": 0.9873945685420336,
+            "cohen_kappa": 0.7108349492445083,
+            "both_wrong_fraction": 0.7386226712392251
+          },
+          {
+            "first": "logistic",
+            "second": "complement_nb",
+            "prediction_agreement": 0.4265918991565483,
+            "cohen_kappa": 0.030039936105080267,
+            "both_wrong_fraction": 0.31634071739734915
+          },
+          {
+            "first": "sgd",
+            "second": "logistic",
+            "prediction_agreement": 0.9873945685420336,
+            "cohen_kappa": 0.7108349492445083,
+            "both_wrong_fraction": 0.7386226712392251
+          },
+          {
+            "first": "sgd",
+            "second": "sgd",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.7461766614144035
+          },
+          {
+            "first": "sgd",
+            "second": "complement_nb",
+            "prediction_agreement": 0.42427472425618684,
+            "cohen_kappa": 0.02699623045263766,
+            "both_wrong_fraction": 0.3164334043933636
+          },
+          {
+            "first": "complement_nb",
+            "second": "logistic",
+            "prediction_agreement": 0.4265918991565483,
+            "cohen_kappa": 0.030039936105080267,
+            "both_wrong_fraction": 0.31634071739734915
+          },
+          {
+            "first": "complement_nb",
+            "second": "sgd",
+            "prediction_agreement": 0.42427472425618684,
+            "cohen_kappa": 0.02699623045263766,
+            "both_wrong_fraction": 0.3164334043933636
+          },
+          {
+            "first": "complement_nb",
+            "second": "complement_nb",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.4624154231161368
+          }
+        ],
+        "unanimous_n": 9044,
+        "unanimous_wrong_fraction": 0.7524325519681557,
+        "interpretation": "Correlated models trained on one corpus are not independent fact-checkers."
+      }
+    },
+    "policy": {
+      "threshold": 0.4,
+      "margin": 0.2,
+      "consensus": 0.6666666666666666,
+      "enabled": true
+    }
+  },
+  "external_by_source": {
+    "gossipcop": {
+      "metrics": {
+        "accuracy": 0.2612726301994855,
+        "f1_macro": 0.23467305549322187,
+        "f1_fake": 0.3773523154966454,
+        "precision": 0.23440914866581958,
+        "recall": 0.9670790522122038,
+        "roc_auc": 0.4930066204008547,
+        "average_precision": 0.2195041133559026,
+        "brier": 0.44895500467068405,
+        "log_loss": 1.2493203157107968,
+        "confusion_matrix": [
+          [
+            771,
+            15063
+          ],
+          [
+            157,
+            4612
+          ]
+        ],
+        "rows": 20603,
+        "threshold": 0.4,
+        "macro_f1_ci95": [
+          0.23095495167225766,
+          0.2384115684198802
+        ],
+        "ci_method": "200 label-stratified article bootstraps; no publisher clustering available.",
+        "ece_10_bins": 0.4955880935697588
+      },
+      "selective_policy": {
+        "coverage": 0.8124544969179246,
+        "review_fraction": 0.18754550308207543,
+        "automatic_fake_n": 16528,
+        "automatic_real_n": 211,
+        "automatic_fake_precision": 0.2376573088092933,
+        "automatic_real_precision": 0.8199052132701422,
+        "fake_precision_wilson_lower": 0.23122945685040736,
+        "real_precision_wilson_lower": 0.7624833824621899,
+        "automatic_errors": 12638,
+        "false_fake": 12600,
+        "false_real": 38,
+        "automatic_accuracy": 0.24499671426011113,
+        "cost_per_article": 3.0877833325243897,
+        "mean_agreement": 0.7993657881538289
+      },
+      "agreement": {
+        "pairwise": [
+          {
+            "first": "logistic",
+            "second": "logistic",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.7562976265592389
+          },
+          {
+            "first": "logistic",
+            "second": "sgd",
+            "prediction_agreement": 0.9885453574722128,
+            "cohen_kappa": 0.6451476171223309,
+            "both_wrong_fraction": 0.7522205504052808
+          },
+          {
+            "first": "logistic",
+            "second": "complement_nb",
+            "prediction_agreement": 0.4294520215502597,
+            "cohen_kappa": 0.023575638570242474,
+            "both_wrong_fraction": 0.3277678008057079
+          },
+          {
+            "first": "sgd",
+            "second": "logistic",
+            "prediction_agreement": 0.9885453574722128,
+            "cohen_kappa": 0.6451476171223309,
+            "both_wrong_fraction": 0.7522205504052808
+          },
+          {
+            "first": "sgd",
+            "second": "sgd",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.7595981167791098
+          },
+          {
+            "first": "sgd",
+            "second": "complement_nb",
+            "prediction_agreement": 0.42605445808862785,
+            "cohen_kappa": 0.018902505963277583,
+            "both_wrong_fraction": 0.32771926418482744
+          },
+          {
+            "first": "complement_nb",
+            "second": "logistic",
+            "prediction_agreement": 0.4294520215502597,
+            "cohen_kappa": 0.023575638570242474,
+            "both_wrong_fraction": 0.3277678008057079
+          },
+          {
+            "first": "complement_nb",
+            "second": "sgd",
+            "prediction_agreement": 0.42605445808862785,
+            "cohen_kappa": 0.018902505963277583,
+            "both_wrong_fraction": 0.32771926418482744
+          },
+          {
+            "first": "complement_nb",
+            "second": "complement_nb",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.4697859535019172
+          }
+        ],
+        "unanimous_n": 8695,
+        "unanimous_wrong_fraction": 0.774468085106383,
+        "interpretation": "Correlated models trained on one corpus are not independent fact-checkers."
+      }
+    },
+    "politifact": {
+      "metrics": {
+        "accuracy": 0.5856410256410256,
+        "f1_macro": 0.5680049483667757,
+        "f1_fake": 0.6552901023890785,
+        "precision": 0.5126835781041389,
+        "recall": 0.9078014184397163,
+        "roc_auc": 0.7675698941309487,
+        "average_precision": 0.7191550209122349,
+        "brier": 0.22707489947463674,
+        "log_loss": 0.6544507433545046,
+        "confusion_matrix": [
+          [
+            187,
+            365
+          ],
+          [
+            39,
+            384
+          ]
+        ],
+        "rows": 975,
+        "threshold": 0.4,
+        "macro_f1_ci95": [
+          0.5406649572649572,
+          0.6023573801820694
+        ],
+        "ci_method": "200 label-stratified article bootstraps; no publisher clustering available.",
+        "ece_10_bins": 0.17759434673292174
+      },
+      "selective_policy": {
+        "coverage": 0.6912820512820513,
+        "review_fraction": 0.3087179487179487,
+        "automatic_fake_n": 545,
+        "automatic_real_n": 129,
+        "automatic_fake_precision": 0.5981651376146789,
+        "automatic_real_precision": 0.8294573643410853,
+        "fake_precision_wilson_lower": 0.5564549936010542,
+        "real_precision_wilson_lower": 0.7552650521256196,
+        "automatic_errors": 241,
+        "false_fake": 219,
+        "false_real": 22,
+        "automatic_accuracy": 0.642433234421365,
+        "cost_per_article": 1.191948717948718,
+        "mean_agreement": 0.763076923076923
+      },
+      "agreement": {
+        "pairwise": [
+          {
+            "first": "logistic",
+            "second": "logistic",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.47692307692307695
+          },
+          {
+            "first": "logistic",
+            "second": "sgd",
+            "prediction_agreement": 0.963076923076923,
+            "cohen_kappa": 0.8526151365514462,
+            "both_wrong_fraction": 0.4512820512820513
+          },
+          {
+            "first": "logistic",
+            "second": "complement_nb",
+            "prediction_agreement": 0.36615384615384616,
+            "cohen_kappa": 0.08803479861241426,
+            "both_wrong_fraction": 0.07487179487179488
+          },
+          {
+            "first": "sgd",
+            "second": "logistic",
+            "prediction_agreement": 0.963076923076923,
+            "cohen_kappa": 0.8526151365514462,
+            "both_wrong_fraction": 0.4512820512820513
+          },
+          {
+            "first": "sgd",
+            "second": "sgd",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.4625641025641026
+          },
+          {
+            "first": "sgd",
+            "second": "complement_nb",
+            "prediction_agreement": 0.38666666666666666,
+            "cohen_kappa": 0.10335314091680814,
+            "both_wrong_fraction": 0.07794871794871795
+          },
+          {
+            "first": "complement_nb",
+            "second": "logistic",
+            "prediction_agreement": 0.36615384615384616,
+            "cohen_kappa": 0.08803479861241426,
+            "both_wrong_fraction": 0.07487179487179488
+          },
+          {
+            "first": "complement_nb",
+            "second": "sgd",
+            "prediction_agreement": 0.38666666666666666,
+            "cohen_kappa": 0.10335314091680814,
+            "both_wrong_fraction": 0.07794871794871795
+          },
+          {
+            "first": "complement_nb",
+            "second": "complement_nb",
+            "prediction_agreement": 1.0,
+            "cohen_kappa": 1.0,
+            "both_wrong_fraction": 0.30666666666666664
+          }
+        ],
+        "unanimous_n": 349,
+        "unanimous_wrong_fraction": 0.2034383954154728,
+        "interpretation": "Correlated models trained on one corpus are not independent fact-checkers."
+      }
+    }
+  },
+  "external_manifest": {
+    "downloaded_at_utc": "2026-11-07T00:48:49.391132+00:00",
+    "commit": "654361e1c8d5baa751baf1dac5032df621652280",
+    "raw_rows": 23196,
+    "evaluated_rows": 21578,
+    "conflicting_title_groups": 125,
+    "internal_overlap_exclusions": 1,
+    "files": [
+      {
+        "file": "politifact_real.csv",
+        "url": "https://raw.githubusercontent.com/KaiDMML/FakeNewsNet/654361e1c8d5baa751baf1dac5032df621652280/dataset/politifact_real.csv",
+        "sha256": "2500f86a7addca0f59fe8cf089c0f802d3eca6980f53538992b3b0e9687dbae0",
+        "rows": 624
+      },
+      {
+        "file": "politifact_fake.csv",
+        "url": "https://raw.githubusercontent.com/KaiDMML/FakeNewsNet/654361e1c8d5baa751baf1dac5032df621652280/dataset/politifact_fake.csv",
+        "sha256": "abe7fe7aad801b1e2ab5fc963cbd0881d9670190262ae3df85e91c3380bd004c",
+        "rows": 432
+      },
+      {
+        "file": "gossipcop_real.csv",
+        "url": "https://raw.githubusercontent.com/KaiDMML/FakeNewsNet/654361e1c8d5baa751baf1dac5032df621652280/dataset/gossipcop_real.csv",
+        "sha256": "d721e9a8b7e660da05c089691743c33fecb25367074e936b5fab3d85cdcbe79f",
+        "rows": 16817
+      },
+      {
+        "file": "gossipcop_fake.csv",
+        "url": "https://raw.githubusercontent.com/KaiDMML/FakeNewsNet/654361e1c8d5baa751baf1dac5032df621652280/dataset/gossipcop_fake.csv",
+        "sha256": "c6932bffadb1230bc61c66bb2ca298f4ef28ce849d268313ad2eed41d18d4c99",
+        "rows": 5323
+      }
+    ],
+    "unit": "raw headlines only; titles passed unchanged to the frozen preprocessing pipeline",
+    "limitations": [
+      "No full article text is provided in the public CSV; this tests headline transfer, not full-text transfer.",
+      "Exact and bounded shingle screens reduce contamination but cannot prove complete independence.",
+      "No external label is used to fit, select, calibrate, remove features or tune thresholds."
+    ],
+    "conflicting_id_groups": 2
+  },
+  "circularity": {
+    "component_shap": {
+      "method": "Exact interventional/independent linear SHAP on calibrated primary component logit.",
+      "formula": "phi_j = a * beta_j * (x_j - mean_train_j); base = calibrated intercept + a * beta dot mean_train",
+      "background": "Mean of training TF-IDF only",
+      "additivity_max_error": 1.2434497875801753e-14,
+      "explains_final_consensus": false,
+      "assumption": "Interventional independence ignores correlated unigrams/bigrams; not causal evidence."
+    },
+    "source_proxy_crosstab": {
+      "0": {
+        "0": 29,
+        "1": 16307
+      },
+      "1": {
+        "0": 10718,
+        "1": 194
+      }
+    },
+    "top100_ANOVA_label_source_overlap": 97,
+    "ANOVA_F_label_source_spearman": 0.9962053089336876,
+    "negative_controls": [
+      {
+        "permutation": 0,
+        "labels_shuffled": false,
+        "heldout_auc": 0.9777269987946966,
+        "heldout_macro_f1": 0.812467035221035,
+        "nonzero_SHAP_magnitude": 0.005551350783937429,
+        "max_selected_train_ANOVA_F": 928.9862221760822
+      },
+      {
+        "permutation": 1,
+        "labels_shuffled": true,
+        "heldout_auc": 0.6693953394937726,
+        "heldout_macro_f1": 0.4904390981833623,
+        "nonzero_SHAP_magnitude": 0.0006411451889556979,
+        "max_selected_train_ANOVA_F": 11.21089489787385
+      },
+      {
+        "permutation": 2,
+        "labels_shuffled": true,
+        "heldout_auc": 0.5185064282844516,
+        "heldout_macro_f1": 0.3342669948743693,
+        "nonzero_SHAP_magnitude": 0.0007839163587559572,
+        "max_selected_train_ANOVA_F": 15.655814130270066
+      },
+      {
+        "permutation": 3,
+        "labels_shuffled": true,
+        "heldout_auc": 0.4373493370831659,
+        "heldout_macro_f1": 0.37079782835364755,
+        "nonzero_SHAP_magnitude": 0.0009639733134257801,
+        "max_selected_train_ANOVA_F": 20.328335532942642
+      },
+      {
+        "permutation": 4,
+        "labels_shuffled": true,
+        "heldout_auc": 0.6025512253917236,
+        "heldout_macro_f1": 0.41769479928667613,
+        "nonzero_SHAP_magnitude": 0.0007068464651113467,
+        "max_selected_train_ANOVA_F": 14.266569569065272
+      },
+      {
+        "permutation": 5,
+        "labels_shuffled": true,
+        "heldout_auc": 0.4126908396946565,
+        "heldout_macro_f1": 0.3194444444444444,
+        "nonzero_SHAP_magnitude": 0.0006892604334927732,
+        "max_selected_train_ANOVA_F": 18.77230839273157
+      },
+      {
+        "permutation": 6,
+        "labels_shuffled": true,
+        "heldout_auc": 0.48239754921655287,
+        "heldout_macro_f1": 0.35411735318956594,
+        "nonzero_SHAP_magnitude": 0.0005943842277306915,
+        "max_selected_train_ANOVA_F": 13.894638645112783
+      },
+      {
+        "permutation": 7,
+        "labels_shuffled": true,
+        "heldout_auc": 0.25765869827239857,
+        "heldout_macro_f1": 0.23767172238545223,
+        "nonzero_SHAP_magnitude": 0.0007331168045755721,
+        "max_selected_train_ANOVA_F": 12.480228120622632
+      },
+      {
+        "permutation": 8,
+        "labels_shuffled": true,
+        "heldout_auc": 0.4342607472880675,
+        "heldout_macro_f1": 0.3196260821514091,
+        "nonzero_SHAP_magnitude": 0.0005478658439117991,
+        "max_selected_train_ANOVA_F": 12.540754582657225
+      },
+      {
+        "permutation": 9,
+        "labels_shuffled": true,
+        "heldout_auc": 0.5558582764162315,
+        "heldout_macro_f1": 0.39834590022120514,
+        "nonzero_SHAP_magnitude": 0.0005503912775720028,
+        "max_selected_train_ANOVA_F": 10.714242797871394
+      },
+      {
+        "permutation": 10,
+        "labels_shuffled": true,
+        "heldout_auc": 0.402973081558859,
+        "heldout_macro_f1": 0.3162660821002636,
+        "nonzero_SHAP_magnitude": 0.0008217947403790383,
+        "max_selected_train_ANOVA_F": 12.816892298365643
+      },
+      {
+        "permutation": 11,
+        "labels_shuffled": true,
+        "heldout_auc": 0.4534200482121334,
+        "heldout_macro_f1": 0.3781094527363184,
+        "nonzero_SHAP_magnitude": 0.0006972995463211044,
+        "max_selected_train_ANOVA_F": 12.128359846331966
+      },
+      {
+        "permutation": 12,
+        "labels_shuffled": true,
+        "heldout_auc": 0.5305469063881076,
+        "heldout_macro_f1": 0.3303705913912168,
+        "nonzero_SHAP_magnitude": 0.0005832163482663284,
+        "max_selected_train_ANOVA_F": 13.127675442039793
+      },
+      {
+        "permutation": 13,
+        "labels_shuffled": true,
+        "heldout_auc": 0.6594264764965849,
+        "heldout_macro_f1": 0.4659957543832063,
+        "nonzero_SHAP_magnitude": 0.0007296790105730157,
+        "max_selected_train_ANOVA_F": 14.896784599242128
+      },
+      {
+        "permutation": 14,
+        "labels_shuffled": true,
+        "heldout_auc": 0.564483728404982,
+        "heldout_macro_f1": 0.3957483319185447,
+        "nonzero_SHAP_magnitude": 0.0006300475182159935,
+        "max_selected_train_ANOVA_F": 13.813929104609633
+      },
+      {
+        "permutation": 15,
+        "labels_shuffled": true,
+        "heldout_auc": 0.5233778625954199,
+        "heldout_macro_f1": 0.39104010955218726,
+        "nonzero_SHAP_magnitude": 0.000678242783771025,
+        "max_selected_train_ANOVA_F": 10.520112830262185
+      },
+      {
+        "permutation": 16,
+        "labels_shuffled": true,
+        "heldout_auc": 0.472177581357975,
+        "heldout_macro_f1": 0.3256561884012864,
+        "nonzero_SHAP_magnitude": 0.0006633926766620792,
+        "max_selected_train_ANOVA_F": 12.00482924954112
+      },
+      {
+        "permutation": 17,
+        "labels_shuffled": true,
+        "heldout_auc": 0.38368822820409804,
+        "heldout_macro_f1": 0.27146515513059255,
+        "nonzero_SHAP_magnitude": 0.0005781644450600864,
+        "max_selected_train_ANOVA_F": 12.605969817544832
+      },
+      {
+        "permutation": 18,
+        "labels_shuffled": true,
+        "heldout_auc": 0.5786460425873845,
+        "heldout_macro_f1": 0.4683536260330214,
+        "nonzero_SHAP_magnitude": 0.0006672483697165305,
+        "max_selected_train_ANOVA_F": 12.143250517031971
+      },
+      {
+        "permutation": 19,
+        "labels_shuffled": true,
+        "heldout_auc": 0.4989202490960225,
+        "heldout_macro_f1": 0.3772893772893773,
+        "nonzero_SHAP_magnitude": 0.0007184141114803255,
+        "max_selected_train_ANOVA_F": 15.931073323495632
+      }
+    ],
+    "permutation_p_value": 0.05,
+    "permutation_resolution": 0.05,
+    "conclusion": "ANOVA is supervised association with corpus labels; SHAP explains the fitted model. Neither is independent validation. Large F or nonzero SHAP can persist in negative controls. Publisher-proxy association can reproduce the target's construction.",
+    "feature_removal_rule": "Only preregistered source/boilerplate rules; no removal by test/external performance or SHAP magnitude.",
+    "anova_caution": "BH-adjusted q-values are training-only diagnostics. Correlated words/articles and source-derived targets prevent a causal or independent-truth interpretation."
+  },
+  "robustness": {
+    "results": [
+      {
+        "condition": "original",
+        "n": 400,
+        "macro_f1": 0.9616956077630234,
+        "class_flip_fraction": 0.0,
+        "decision_flip_fraction": 0.0,
+        "mean_absolute_score_change": 0.0,
+        "review_fraction": 0.025
+      },
+      {
+        "condition": "uppercase",
+        "n": 400,
+        "macro_f1": 0.9616956077630234,
+        "class_flip_fraction": 0.0,
+        "decision_flip_fraction": 0.0,
+        "mean_absolute_score_change": 0.0,
+        "review_fraction": 0.025
+      },
+      {
+        "condition": "publisher_prefix",
+        "n": 400,
+        "macro_f1": 0.9616956077630234,
+        "class_flip_fraction": 0.0,
+        "decision_flip_fraction": 0.0,
+        "mean_absolute_score_change": 0.0008980524406259993,
+        "review_fraction": 0.025
+      },
+      {
+        "condition": "social_footer",
+        "n": 400,
+        "macro_f1": 0.9616956077630234,
+        "class_flip_fraction": 0.0,
+        "decision_flip_fraction": 0.0,
+        "mean_absolute_score_change": 0.0,
+        "review_fraction": 0.025
+      },
+      {
+        "condition": "typos",
+        "n": 400,
+        "macro_f1": 0.9683939379573002,
+        "class_flip_fraction": 0.0025,
+        "decision_flip_fraction": 0.0125,
+        "mean_absolute_score_change": 0.00441083283529626,
+        "review_fraction": 0.0225
+      },
+      {
+        "condition": "headline_only",
+        "n": 400,
+        "macro_f1": 0.5806481452930837,
+        "class_flip_fraction": 0.35,
+        "decision_flip_fraction": 0.5725,
+        "mean_absolute_score_change": 0.28732712760995804,
+        "review_fraction": 0.46
+      }
+    ],
+    "local_ids": [
+      "isot-22518496fa724cb172f78da8",
+      "isot-5507e1c9e8e9f8ab6e87365b",
+      "isot-27ab4a5c01ff26f08319d961"
+    ],
+    "limitation": "Controlled text perturbations and deletions are not new factual ground truth or causal explanations."
+  },
+  "boundary_stability": {
+    "repetitions": 60,
+    "enabled_fraction": 1.0,
+    "threshold_ci95": [
+      0.25,
+      0.75
+    ],
+    "consensus_unanimous_fraction": 0.5833333333333334,
+    "note": "Reselection stability on policy-validation only. The frozen policy is NOT replaced by bootstrap results."
+  },
+  "removed_feature_count": 188,
+  "legal": {
+    "review_date": "2026-11-07",
+    "scope": "Local academic prototype in Moldova, assumed from course context.",
+    "status": "Public redistribution and deployment clearance NOT established.",
+    "datasets": {
+      "ISOT": {
+        "finding": "Public academic download and requested citations; no explicit general redistribution license established.",
+        "source": "https://onlineacademiccommunity.uvic.ca/isot/2022/11/27/fake-news-detection-datasets/"
+      },
+      "FakeNewsNet": {
+        "finding": "Authors restrict full corpus distribution for publisher copyright and Twitter policies; repository LICENSE endpoint returned 404. Public minimal CSV availability is not a blanket copyright license.",
+        "source": "https://github.com/KaiDMML/FakeNewsNet"
+      }
+    },
+    "primary_legal_sources": [
+      {
+        "url": "https://www.agepi.gov.md/ro/node/7407",
+        "finding": "Official AGEPI reference to Moldova copyright law 230/2022. Research use and redistribution must be assessed separately."
+      },
+      {
+        "url": "https://datepersonale.md/wp-content/uploads/2026/03/Legea-nr.1952024.pdf",
+        "finding": "CNPDCP guidance states law 195/2024 is in force from 23 August 2026; purpose limitation, minimization and retention apply where personal data is processed."
+      }
+    ],
+    "implemented_controls": [
+      "Raw corpora remain in ignored local data folders; no publisher crawling or tweet hydration.",
+      "No external personal profiles, sensitive attributes or person-level risk scoring.",
+      "New persistent stream logs redact article titles and body text by default.",
+      "Statistical reports export article IDs and aggregate results instead of raw article text.",
+      "Automatic public verdict/release gate disabled when external evidence fails."
+    ],
+    "unresolved": [
+      "Explicit dataset redistribution rights and intended public deployment jurisdiction.",
+      "Names and other personal data may remain in source news; no claim of complete anonymization.",
+      "Existing local v1 logs, if any, predate the new minimization rule and require owner retention review.",
+      "A rights-holder/institution review is required for redistribution; this is an issue inventory, not legal certification."
+    ]
+  },
+  "release": {
+    "status": "research_only",
+    "automatic_user_verdicts_enabled": false,
+    "technical_gate_passed": false,
+    "checks": {
+      "external_macro_f1": false,
+      "external_macro_f1_ci_lower": false,
+      "external_automatic_fake_precision": false,
+      "external_automatic_real_precision": false,
+      "external_coverage": true,
+      "redistribution_rights_confirmed": false
+    },
+    "reason": "Public deployment/redistribution not cleared; external quality gates and source confounding must be reviewed."
+  },
+  "freeze_verified": true,
+  "external_previously_seen": false,
+  "methodological_cycle": [
+    "Problem",
+    "KPI",
+    "Features",
+    "Model and metric tuning",
+    "Agreement and confusion matrices",
+    "Calibrated consensus boundary",
+    "Global and local XAI",
+    "Robustness",
+    "Independent raw-headline validation",
+    "Legal inventory",
+    "Preregistered bad-feature removal",
+    "Recalculation on same frozen protocol",
+    "Version fixation"
+  ],
+  "order_note": "Before/after rules and models were registered/fitted before external access; external outcomes do not select features.",
+  "external_integrity_correction": {
+    "conflicting_id_groups": 2,
+    "rule": "Remove IDs assigned both labels, in both model variants. Identified from raw integrity checks before inspecting external scores; no parameter/threshold changes."
+  },
+  "supplemental_diagnostics": {
+    "trained_parameters_changed": false,
+    "external_threshold_tuning": false,
+    "description": "Train-only BH ANOVA q-values and publisher-domain uncertainty from frozen external scores."
+  }
+}

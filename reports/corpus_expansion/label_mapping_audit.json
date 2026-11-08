@@ -1,0 +1,93 @@
+{
+  "parsed_rows": 72134,
+  "evidence": {
+    "unique_training_copies": 26721,
+    "identity_agreements": 26721,
+    "documented_inverse_agreements": 0,
+    "raw_1_project_1": 16000,
+    "raw_0_project_0": 10721
+  },
+  "examples": [
+    {
+      "row_index": 0,
+      "body_hash": "a798348da33b10cfb5248dad903c4eef0d8bbb864f8b46da569f59de45034753",
+      "raw_label": 1,
+      "existing_training_label": 1
+    },
+    {
+      "row_index": 2,
+      "body_hash": "2401006f17feab7edae919586380c1d9f5d127e48390039f19ee1ac35ffcf8a4",
+      "raw_label": 1,
+      "existing_training_label": 1
+    },
+    {
+      "row_index": 5,
+      "body_hash": "7a9367381380ab7fa8274abb66a0b814a4d5976b9b18599dc854130c4938ad1c",
+      "raw_label": 1,
+      "existing_training_label": 1
+    },
+    {
+      "row_index": 6,
+      "body_hash": "2dc92eff5f13fa60d1fd816fd0458ebfe77fb33986b4281d2b43389acd61c62d",
+      "raw_label": 1,
+      "existing_training_label": 1
+    },
+    {
+      "row_index": 13,
+      "body_hash": "7dfba3e11d2f2d47defe05300f59c8eedac535e5e0e2e2961236447dd1966327",
+      "raw_label": 1,
+      "existing_training_label": 1
+    },
+    {
+      "row_index": 16,
+      "body_hash": "fdbad508a0b98812563690045ae3c887a2e7ded1c3960b84a276ad63e05df249",
+      "raw_label": 1,
+      "existing_training_label": 1
+    },
+    {
+      "row_index": 18,
+      "body_hash": "14fd27a6a181d980ea872cf924e576ea768abfab82c62746bdd58b7149d4126b",
+      "raw_label": 1,
+      "existing_training_label": 1
+    },
+    {
+      "row_index": 19,
+      "body_hash": "94894af1ff41d737ce1e6a22011967aaba11feeac09f71068de13fbf27b15126",
+      "raw_label": 0,
+      "existing_training_label": 0
+    },
+    {
+      "row_index": 22,
+      "body_hash": "5103783a77d4848f7ff56b6238972c42d6a84ac3070946a985bfc7c5e4ddf7a8",
+      "raw_label": 1,
+      "existing_training_label": 1
+    },
+    {
+      "row_index": 23,
+      "body_hash": "e9d97dc15de5cf060bec2fdec695ad7d05900445bac5001dc353fc5fd550cb7e",
+      "raw_label": 1,
+      "existing_training_label": 1
+    },
+    {
+      "row_index": 24,
+      "body_hash": "4b66b5377f33b1b6a86d707de4098402320164bfe1c1bb4f850a26e46050e4f2",
+      "raw_label": 1,
+      "existing_training_label": 1
+    },
+    {
+      "row_index": 25,
+      "body_hash": "e2ecade53a3fc8bc816ffe73fbb3d444ecdf59f87936d3d3e92e28e7a7d96387",
+      "raw_label": 1,
+      "existing_training_label": 1
+    }
+  ],
+  "identity_agreement_rate": 1.0,
+  "documented_inverse_agreement_rate": 0.0,
+  "effective_convention": "verified_identity",
+  "documentation_discrepancy": true,
+  "basis": "Encoding reconciliation from identical articles already labelled in ISOT TRAIN; no predictions, validation/test labels, or model-score maximization.",
+  "limitation": "Identical-content agreement resolves code orientation for this artifact; it does not independently verify factual truth.",
+  "raw_csv_sha256": "665331424230fc452e9482c3547a6a199a2c29745ade8d236950d1d105223773",
+  "ISOT_corpus_sha256": "9f9de88b83bc6d88385245134e3ba1bd95dc3f7c2e6d1b797ce582899decbac9",
+  "audit_method": "train-exact-copy-label-orientation-v1"
+}

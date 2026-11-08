@@ -1,0 +1,41 @@
+{
+  "downloaded_at_utc": "2026-11-07T00:48:49.391132+00:00",
+  "commit": "654361e1c8d5baa751baf1dac5032df621652280",
+  "raw_rows": 23196,
+  "evaluated_rows": 21578,
+  "conflicting_title_groups": 125,
+  "internal_overlap_exclusions": 1,
+  "files": [
+    {
+      "file": "politifact_real.csv",
+      "url": "https://raw.githubusercontent.com/KaiDMML/FakeNewsNet/654361e1c8d5baa751baf1dac5032df621652280/dataset/politifact_real.csv",
+      "sha256": "2500f86a7addca0f59fe8cf089c0f802d3eca6980f53538992b3b0e9687dbae0",
+      "rows": 624
+    },
+    {
+      "file": "politifact_fake.csv",
+      "url": "https://raw.githubusercontent.com/KaiDMML/FakeNewsNet/654361e1c8d5baa751baf1dac5032df621652280/dataset/politifact_fake.csv",
+      "sha256": "abe7fe7aad801b1e2ab5fc963cbd0881d9670190262ae3df85e91c3380bd004c",
+      "rows": 432
+    },
+    {
+      "file": "gossipcop_real.csv",
+      "url": "https://raw.githubusercontent.com/KaiDMML/FakeNewsNet/654361e1c8d5baa751baf1dac5032df621652280/dataset/gossipcop_real.csv",
+      "sha256": "d721e9a8b7e660da05c089691743c33fecb25367074e936b5fab3d85cdcbe79f",
+      "rows": 16817
+    },
+    {
+      "file": "gossipcop_fake.csv",
+      "url": "https://raw.githubusercontent.com/KaiDMML/FakeNewsNet/654361e1c8d5baa751baf1dac5032df621652280/dataset/gossipcop_fake.csv",
+      "sha256": "c6932bffadb1230bc61c66bb2ca298f4ef28ce849d268313ad2eed41d18d4c99",
+      "rows": 5323
+    }
+  ],
+  "unit": "raw headlines only; titles passed unchanged to the frozen preprocessing pipeline",
+  "limitations": [
+    "No full article text is provided in the public CSV; this tests headline transfer, not full-text transfer.",
+    "Exact and bounded shingle screens reduce contamination but cannot prove complete independence.",
+    "No external label is used to fit, select, calibrate, remove features or tune thresholds."
+  ],
+  "conflicting_id_groups": 2
+}

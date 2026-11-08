@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+data/raw/
+data/processed/
+artifacts/*.joblib
+artifacts/*.pkl
+reports/events*.jsonl
+reports/feedback*.jsonl
+reports/stream_events.jsonl
+reports/.browser-qa*/
+reports/ui-*.png
+reports/server.json
+reports/server.log
+.streamlit/secrets.toml

@@ -1,0 +1,170 @@
+{
+  "version": "2.0.0",
+  "purpose": "Research assistance for manual review of English news, not autonomous truth adjudication.",
+  "primary_kpi": "Macro-F1 with bootstrap interval on independent raw headlines; report full-text ISOT separately.",
+  "external_gate": {
+    "macro_f1_min": 0.7,
+    "macro_f1_ci_lower_min": 0.65,
+    "automatic_precision_wilson_lower_min": 0.9,
+    "coverage_min": 0.5
+  },
+  "costs": {
+    "false_fake": 5.0,
+    "false_real": 1.0,
+    "manual_review": 0.15
+  },
+  "policy_constraints": {
+    "class_precision_wilson_lower_min": 0.9,
+    "minimum_auto_count_per_class": 30,
+    "coverage_min": 0.5
+  },
+  "partitions": {
+    "train": "Original chronological train, excluding evaluation labels.",
+    "tuning": "First 40 percent of original validation dates/rows.",
+    "calibration_members": "Next 20 percent of original validation.",
+    "calibration_fusion": "Next 20 percent of original validation.",
+    "policy": "Final 20 percent of original validation.",
+    "internal_reused_test": "Old test already observed in v1; diagnostic, not a new confirmatory test.",
+    "external": "Pinned FakeNewsNet raw CSV titles, evaluated only after candidate and policy are frozen."
+  },
+  "feature_rule": "Remove predeclared publisher/contact/byline/social boilerplate. ANOVA and SHAP are diagnostics, never independent validation or a rule that high importance is bad.",
+  "selection": {
+    "logistic_C": [
+      0.25,
+      1.0,
+      4.0
+    ],
+    "sgd_alpha": [
+      0.0001,
+      0.001
+    ],
+    "complement_nb_alpha": [
+      0.5,
+      1.0
+    ]
+  },
+  "calibration": "Member Platt calibrators and fusion Platt calibrator fit on separate chronological subsets.",
+  "consensus_grid": {
+    "threshold": [
+      0.25,
+      0.75,
+      0.05
+    ],
+    "margin": [
+      0,
+      0.05,
+      0.1,
+      0.15,
+      0.2
+    ],
+    "minimum_agreement": [
+      0.6666666666666666,
+      1.0
+    ]
+  },
+  "external_commit": "654361e1c8d5baa751baf1dac5032df621652280",
+  "external_unit": "Headline only. No tweet hydration or publisher scraping. Compare with ISOT headline-only diagnostic.",
+  "external_reuse_rule": "Never tune on external labels. A failed release gate remains failed; future tuning requires a new independent external set.",
+  "negative_controls": {
+    "permutations": 19,
+    "train_sample": 1600,
+    "heldout_sample": 600,
+    "selection_fit": "ANOVA selector refitted for every shuffled training-label vector."
+  },
+  "bootstrap_repetitions": 200,
+  "seed": 42,
+  "legal_scope_assumption": "Local noncommercial academic research in Moldova; no redistribution/public deployment clearance asserted.",
+  "english_improvement": {
+    "registered_on": "2026-11-07",
+    "purpose": "Reduce false accusations of real English news, improve balanced classification, preserve manual-review release gate.",
+    "eligible_data": "Only ISOT/WELFake article-level labels. Existing held-out validation/test/external groups remain excluded from fitting. Publisher proxies, health quality ratings and claim scales are not binary article labels.",
+    "split": "Union exact normalized headlines with existing near-body groups, quarantine label conflicts, reserve prior held-out groups, then stratified group allocation by class and source with seed 42.",
+    "roles": {
+      "train": 0.7,
+      "tuning": 0.075,
+      "calibration_members": 0.05,
+      "calibration_fusion": 0.05,
+      "policy": 0.05,
+      "internal_group_test": 0.075
+    },
+    "train_capacity": 30000,
+    "features": {
+      "word_max_features": 20000,
+      "word_ngram_range": [
+        1,
+        2
+      ],
+      "character_max_features": 6000,
+      "character_ngram_range": [
+        3,
+        4
+      ],
+      "character_weight": 0.4,
+      "maximum_cleaned_characters": 1600,
+      "dtype": "float32"
+    },
+    "views": "Full lead plus title or short lead augmentation; all views of an article stay in one role and share its training weight. Separate short/full member and fusion calibration.",
+    "candidate_grid": {
+      "SGD_log_loss_alpha": [
+        1e-05,
+        0.0001
+      ],
+      "SGD_hinge_alpha": [
+        1e-05,
+        0.0001
+      ],
+      "ComplementNB_alpha": [
+        0.5,
+        1.0
+      ]
+    },
+    "selection": "Best mean short/full tuning macro-F1 per family; no external outcomes select candidates. Threshold maximizes policy macro-F1 under false-real-accusation rate <= 0.20 when feasible; tie favors fewer false accusations. Review boundaries retain per-class precision constraints.",
+    "external_raw_archive": "data/raw/fakeNewsDatasets.zip",
+    "external_archive_sha256": "649dd52b0378b0f95a68afd4e55cfe8e3c70a6bd9d647e10194ebb69fb562f77",
+    "external_source": "https://web.eecs.umich.edu/~mihalcea/downloads.html",
+    "external_rule": "Only text is opened before fitting for label-blind overlap exclusion. External labels are opened once after candidate and thresholds are frozen. FakeNewsNet is a reused diagnostic and cannot select the model.",
+    "external_kpi": "Macro-F1, real-to-fake false positive rate, fake recall, confusion matrix; FakeNewsAMT and Celebrity reported separately. Bootstrap entire paired news groups, not individual counterfactual variants.",
+    "robustness": "Original, uppercase, publisher prefix, social footer, typos and headline-only on internal held-out groups. Training-only ANOVA and permuted-label controls; component SHAP explicitly distinct from final consensus.",
+    "release": "Automatic user verdicts remain disabled; changing model parameters does not establish factual verification or redistribution rights. Replace only the current canonical model after evaluation; create no version folders or model copies in the project."
+  },
+  "refinement": {
+    "registered_at_utc": "2026-11-07T22:01:09.329542+00:00",
+    "purpose": "Reduce false accusations with format-matched calibration and regularized stacking. English only; no autonomous factual verdicts.",
+    "baseline_sha256": "59100ac83956c22a58ab5161624142f910d156373513a7da3265e63db63cee89",
+    "roles_sha256": "0c4962bae46992bbea9babfc2e18c3c19d161c286b0a7735bdf48c3e1ac02525",
+    "frozen_base": "Vocabulary, IDF, feature weights and all three base estimators remain fixed.",
+    "formats": [
+      "full",
+      "short_prose",
+      "headline"
+    ],
+    "member_calibration": "Separate Platt fits on calibration_members for each format.",
+    "fusion_candidates": {
+      "modes": [
+        "current",
+        "mean_logit",
+        "member_logits"
+      ],
+      "C": [
+        0.01,
+        0.1,
+        1.0
+      ],
+      "member_logit_clip": 0.01
+    },
+    "selection": "Per format, maximize mean tuning macro-F1 minus 0.05 times tuning real-to-fake rate. Ties favor current model, then stronger regularization. Calibration_fusion fits the combining model; policy never selects fusion parameters.",
+    "threshold": "Choose on policy only: retain macro-F1 within 0.015 of its optimum and recall >= 0.70, prefer real-to-fake rate <=0.10 (else <=0.20), minimize 5*false_fake + false_real. No external-driven retuning.",
+    "adoption": "Adopt selected calibration/stacking only if mean format tuning macro-F1 is no more than 0.005 below current and mean format tuning false_fake_rate does not increase after locked policy thresholds. Otherwise keep current model and record the rejected experiment.",
+    "confirmation": "unused_capacity groups have not been used by base model or scored before this refinement; evaluate after freeze as a new within-corpus confirmation only. internal_group_test and all FakeNewsAMT, Celebrity and FakeNewsNet results are explicitly reused diagnostics.",
+    "repetitions": 200,
+    "seed": 42,
+    "artifacts": "Replace existing model and training report in place. No version directories or copies of project documents.",
+    "validation_followup": {
+      "registered_at_utc": "2026-11-07T22:07:47.155797+00:00",
+      "reason": "Joint conservative-threshold experiment was rejected on tuning only, before confirmation or external scoring. Short-format macro-F1 loss exceeded the original adoption budget.",
+      "policy_f1_budget": 0.005,
+      "per_format_protection": "Retain current format rule when the candidate tuning macro-F1 is more than 0.005 below current or its false-fake rate increases. No external results are used.",
+      "confirmation_status": "unused_capacity and external data have not been scored for the rejected candidate."
+    }
+  }
+}

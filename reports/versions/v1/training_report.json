@@ -1,0 +1,235 @@
+{
+  "metadata": {
+    "created_at_utc": "2026-11-07T00:18:51.708164+00:00",
+    "dataset": "ISOT",
+    "language": "English",
+    "positive_label": 1,
+    "label_names": {
+      "0": "real",
+      "1": "fake"
+    },
+    "selected_model": "Logistic regression · balanced",
+    "selection_rule": "Best validation macro-F1 among logistic regression models at threshold 0.5.",
+    "threshold_selection": "Maximum validation macro-F1 on grid [0.20, 0.80]; test labels are not used.",
+    "comparison_threshold": 0.5,
+    "preprocessing_version": "isot-temporal-v1",
+    "seed": 42,
+    "train_rows": 27248,
+    "validation_rows": 5926,
+    "test_rows": 5909,
+    "vocabulary_size": 40000,
+    "training_seconds": 401.83,
+    "batch_latency_ms_per_article": 1.5633,
+    "test_metrics": {
+      "accuracy": 0.9896767642579116,
+      "f1_macro": 0.9740744323709067,
+      "f1_fake": 0.9539622641509434,
+      "precision": 0.9678407350689127,
+      "recall": 0.9404761904761905,
+      "roc_auc": 0.9982726501904944,
+      "average_precision": 0.9908987561231344,
+      "brier": 0.016662535371722905,
+      "log_loss": 0.08997726671969261,
+      "confusion_matrix": [
+        [
+          5216,
+          21
+        ],
+        [
+          40,
+          632
+        ]
+      ],
+      "rows": 5909,
+      "threshold": 0.6400000000000001
+    },
+    "dataset_summary": {
+      "dataset": "ISOT",
+      "preprocessing_version": "isot-temporal-v1",
+      "raw_rows": 44898,
+      "clean_rows": 39083,
+      "removed_duplicates": 5805,
+      "ambiguous_groups": 0,
+      "ambiguous_rows": 0,
+      "missing_dates": 10,
+      "removed_empty": 0,
+      "split_counts": {
+        "train": 27248,
+        "validation": 5926,
+        "test": 5909
+      },
+      "label_counts": {
+        "0": 21190,
+        "1": 17893
+      },
+      "date_range": {
+        "start": "2015-03-31T00:00:00",
+        "end": "2018-02-19T00:00:00"
+      },
+      "split_details": {
+        "test": {
+          "rows": 5909,
+          "real": 5237,
+          "fake": 672,
+          "start": "2017-11-03T00:00:00",
+          "end": "2018-02-19T00:00:00"
+        },
+        "train": {
+          "rows": 27248,
+          "real": 10747,
+          "fake": 16501,
+          "start": "2015-03-31T00:00:00",
+          "end": "2017-09-13T00:00:00"
+        },
+        "validation": {
+          "rows": 5926,
+          "real": 5206,
+          "fake": 720,
+          "start": "2017-09-14T00:00:00",
+          "end": "2017-11-02T00:00:00"
+        }
+      },
+      "language": "English",
+      "source": {
+        "dataset": "ISOT Fake News Dataset",
+        "source_url": "https://onlineacademiccommunity.uvic.ca/isot/wp-content/uploads/sites/7295/2023/03/News-_dataset.zip",
+        "description_url": "https://onlineacademiccommunity.uvic.ca/isot/2022/11/27/fake-news-detection-datasets/",
+        "archive_sha256": "1846d4ca7abfedb53a4f7c233489d23a0e6c8bb79e7f56fb8345c4faceae5268",
+        "archive_bytes": 43106824,
+        "verified_at_utc": "2026-11-07T00:10:36.852896+00:00",
+        "files": {
+          "True.csv": {
+            "sha256": "ba0844414a65dc6ae7402b8eee5306da24b6b56488d6767135af466c7dcb2775",
+            "bytes": 53582940
+          },
+          "Fake.csv": {
+            "sha256": "bebf8bcfe95678bf2c732bf413a2ce5f621af0102c82bf08083b2e5d3c693d0c",
+            "bytes": 62789876
+          }
+        }
+      },
+      "limitations": [
+        "Source-confounded labels: real articles from Reuters, fake articles from other outlets.",
+        "The dataset does not provide a verified publisher identifier for every article.",
+        "Chronological evaluation is not a source-disjoint or multilingual evaluation.",
+        "Removing explicit source markers does not remove all stylistic shortcuts."
+      ]
+    },
+    "corpus_sha256": "9f9de88b83bc6d88385245134e3ba1bd95dc3f7c2e6d1b797ce582899decbac9",
+    "limitations": [
+      "Prediction is a classification score, not independent fact verification.",
+      "English ISOT articles; Russian and Romanian performance is not validated.",
+      "ISOT real/fake labels are confounded with publisher/source.",
+      "No political or cultural fairness claim is possible without appropriate annotations.",
+      "The model has not been evaluated on current news or previously unseen publishers.",
+      "Probability scores are not assumed to be calibrated outside this corpus."
+    ]
+  },
+  "threshold": 0.6400000000000001,
+  "comparison": [
+    {
+      "model": "Logistic regression",
+      "train_seconds": 78.088,
+      "validation_accuracy": 0.9848126898413769,
+      "validation_f1_macro": 0.9658088031657917,
+      "validation_f1_fake": 0.9403183023872679,
+      "validation_precision": 0.899746192893401,
+      "validation_recall": 0.9847222222222223,
+      "validation_roc_auc": 0.9987482392111666,
+      "validation_average_precision": 0.9936574160361897,
+      "validation_brier": 0.020321830041202197,
+      "validation_log_loss": 0.10420572404399145,
+      "validation_rows": 5926,
+      "validation_threshold": 0.5,
+      "test_accuracy": 0.9842612963276358,
+      "test_f1_macro": 0.9626679447251048,
+      "test_f1_fake": 0.9342756183745583,
+      "test_precision": 0.8896366083445492,
+      "test_recall": 0.9836309523809523,
+      "test_roc_auc": 0.9982959505169263,
+      "test_average_precision": 0.9909339964407319,
+      "test_brier": 0.02147239813836299,
+      "test_log_loss": 0.10808269748134587,
+      "test_rows": 5909,
+      "test_threshold": 0.5
+    },
+    {
+      "model": "Logistic regression · balanced",
+      "train_seconds": 79.648,
+      "validation_accuracy": 0.9886938913263584,
+      "validation_f1_macro": 0.9741200222896247,
+      "validation_f1_fake": 0.9546991210277215,
+      "validation_precision": 0.930171277997365,
+      "validation_recall": 0.9805555555555555,
+      "validation_roc_auc": 0.9987597110172024,
+      "validation_average_precision": 0.9937353956288878,
+      "validation_brier": 0.01545298255364746,
+      "validation_log_loss": 0.08586865075406604,
+      "validation_rows": 5926,
+      "validation_threshold": 0.5,
+      "test_accuracy": 0.9891690641394483,
+      "test_f1_macro": 0.9735795486301293,
+      "test_f1_fake": 0.9532846715328467,
+      "test_precision": 0.9355300859598854,
+      "test_recall": 0.9717261904761905,
+      "test_roc_auc": 0.9982726501904944,
+      "test_average_precision": 0.9908987561231344,
+      "test_brier": 0.016662535371722905,
+      "test_log_loss": 0.08997726671969261,
+      "test_rows": 5909,
+      "test_threshold": 0.5
+    },
+    {
+      "model": "Complement Naive Bayes",
+      "train_seconds": 79.101,
+      "validation_accuracy": 0.9628754640566993,
+      "validation_f1_macro": 0.9202678791813618,
+      "validation_f1_fake": 0.8619824341279799,
+      "validation_precision": 0.7860411899313501,
+      "validation_recall": 0.9541666666666667,
+      "validation_roc_auc": 0.9919334528535451,
+      "validation_average_precision": 0.9704668383997405,
+      "validation_brier": 0.02658506458519506,
+      "validation_log_loss": 0.09260129283731465,
+      "validation_rows": 5926,
+      "validation_threshold": 0.5,
+      "test_accuracy": 0.961922491115248,
+      "test_f1_macro": 0.9124443683162706,
+      "test_f1_fake": 0.8466257668711656,
+      "test_precision": 0.7811320754716982,
+      "test_recall": 0.9241071428571429,
+      "test_roc_auc": 0.9875380193131291,
+      "test_average_precision": 0.9512298540736907,
+      "test_brier": 0.028298916136949605,
+      "test_log_loss": 0.10030184037151892,
+      "test_rows": 5909,
+      "test_threshold": 0.5
+    },
+    {
+      "model": "Majority baseline",
+      "train_seconds": 77.824,
+      "validation_accuracy": 0.12149848126898413,
+      "validation_f1_macro": 0.10833584110743304,
+      "validation_f1_fake": 0.21667168221486607,
+      "validation_precision": 0.12149848126898413,
+      "validation_recall": 1.0,
+      "validation_roc_auc": 0.5,
+      "validation_average_precision": 0.12149848126898413,
+      "validation_brier": 0.3410770657312841,
+      "validation_log_loss": 0.878255617063073,
+      "validation_rows": 5926,
+      "validation_threshold": 0.5,
+      "test_accuracy": 0.11372482653579286,
+      "test_f1_macro": 0.10211214101200425,
+      "test_f1_fake": 0.2042242820240085,
+      "test_precision": 0.11372482653579286,
+      "test_recall": 1.0,
+      "test_roc_auc": 0.5,
+      "test_average_precision": 0.11372482653579286,
+      "test_brier": 0.3427186397673522,
+      "test_log_loss": 0.8815889162081177,
+      "test_rows": 5909,
+      "test_threshold": 0.5
+    }
+  ]
+}

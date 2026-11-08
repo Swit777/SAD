@@ -1,0 +1,38 @@
+{
+  "review_date": "2026-11-07",
+  "scope": "Local academic prototype in Moldova, assumed from course context.",
+  "status": "Public redistribution and deployment clearance NOT established.",
+  "datasets": {
+    "ISOT": {
+      "finding": "Public academic download and requested citations; no explicit general redistribution license established.",
+      "source": "https://onlineacademiccommunity.uvic.ca/isot/2022/11/27/fake-news-detection-datasets/"
+    },
+    "FakeNewsNet": {
+      "finding": "Authors restrict full corpus distribution for publisher copyright and Twitter policies; repository LICENSE endpoint returned 404. Public minimal CSV availability is not a blanket copyright license.",
+      "source": "https://github.com/KaiDMML/FakeNewsNet"
+    }
+  },
+  "primary_legal_sources": [
+    {
+      "url": "https://www.agepi.gov.md/ro/node/7407",
+      "finding": "Official AGEPI reference to Moldova copyright law 230/2022. Research use and redistribution must be assessed separately."
+    },
+    {
+      "url": "https://datepersonale.md/wp-content/uploads/2026/03/Legea-nr.1952024.pdf",
+      "finding": "CNPDCP guidance states law 195/2024 is in force from 23 August 2026; purpose limitation, minimization and retention apply where personal data is processed."
+    }
+  ],
+  "implemented_controls": [
+    "Raw corpora remain in ignored local data folders; no publisher crawling or tweet hydration.",
+    "No external personal profiles, sensitive attributes or person-level risk scoring.",
+    "New persistent stream logs redact article titles and body text by default.",
+    "Statistical reports export article IDs and aggregate results instead of raw article text.",
+    "Automatic public verdict/release gate disabled when external evidence fails."
+  ],
+  "unresolved": [
+    "Explicit dataset redistribution rights and intended public deployment jurisdiction.",
+    "Names and other personal data may remain in source news; no claim of complete anonymization.",
+    "Existing local v1 logs, if any, predate the new minimization rule and require owner retention review.",
+    "A rights-holder/institution review is required for redistribution; this is an issue inventory, not legal certification."
+  ]
+}

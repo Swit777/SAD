@@ -1,0 +1,5 @@
+split,label,n,reuters_marker_rate,cleaned_reuters_marker_rate
+train,0,582,0.44501718213058417,0.0
+train,1,618,0.022653721682847898,0.0
+test,0,195,0.5076923076923077,0.0
+test,1,205,0.01951219512195122,0.0

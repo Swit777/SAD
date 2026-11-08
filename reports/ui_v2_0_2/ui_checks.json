@@ -1,0 +1,122 @@
+{
+  "Обзор": {
+    "exceptions": [],
+    "metrics": [
+      {
+        "label": "Текстов в каталоге",
+        "value": "313 354"
+      },
+      {
+        "label": "Внешний macro-F1",
+        "value": "25.0%"
+      },
+      {
+        "label": "Внешняя accuracy",
+        "value": "27.6%"
+      },
+      {
+        "label": "Участников консенсуса",
+        "value": "3"
+      },
+      {
+        "label": "Добавлено текстов",
+        "value": "252 146"
+      },
+      {
+        "label": "Записей утверждений",
+        "value": "47 609"
+      },
+      {
+        "label": "Групп утверждений",
+        "value": "37 696"
+      },
+      {
+        "label": "В обучении текущей модели",
+        "value": "27 248"
+      }
+    ]
+  },
+  "Проверка новости": {
+    "exceptions": [],
+    "metrics": []
+  },
+  "Каталог данных": {
+    "exceptions": [],
+    "metrics": [
+      {
+        "label": "Текстов",
+        "value": "313 354"
+      },
+      {
+        "label": "Записей утверждений",
+        "value": "47 609"
+      },
+      {
+        "label": "Групп утверждений",
+        "value": "37 696"
+      },
+      {
+        "label": "Доменов FakeNewsCorpus",
+        "value": "370"
+      }
+    ]
+  },
+  "Модели и данные": {
+    "exceptions": [],
+    "metrics": [
+      {
+        "label": "Исходных записей",
+        "value": "44 898"
+      },
+      {
+        "label": "После очистки",
+        "value": "39 083"
+      },
+      {
+        "label": "Удалено дубликатов",
+        "value": "5 805"
+      },
+      {
+        "label": "Спорных групп",
+        "value": "0"
+      }
+    ]
+  },
+  "Эксперименты": {
+    "exceptions": [],
+    "metrics": []
+  },
+  "Поток и обратная связь": {
+    "exceptions": [],
+    "metrics": []
+  },
+  "Методологический аудит": {
+    "exceptions": [],
+    "metrics": []
+  },
+  "Материалы проекта": {
+    "exceptions": [],
+    "metrics": []
+  },
+  "catalog_open": {
+    "exceptions": [],
+    "text_loaded": true,
+    "scope": "publisher_proxy"
+  },
+  "catalog_to_analysis": {
+    "exceptions": [],
+    "navigation": "Проверка новости",
+    "same_text": true,
+    "same_title": true
+  },
+  "materials": {
+    "exceptions": [],
+    "download_labels": [
+      "Скачать отчёт Word",
+      "Скачать презентацию PowerPoint",
+      "Расширение корпуса",
+      "Источники и условия использования",
+      "Методологический аудит модели"
+    ]
+  }
+}

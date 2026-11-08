@@ -1,0 +1,69 @@
+Recovering completed records and verifying them against original texts...
+Importing FakeHealth full texts, excluding review verdicts...
+Streaming the public FakeNewsCorpus first ZIP volume...
+Verified recovered prefix of 92996 CSV records; continuing...
+FakeNewsCorpus scanned=100000, retained=53930, domains=245
+FakeNewsCorpus scanned=110000, retained=61523, domains=250
+FakeNewsCorpus scanned=120000, retained=68749, domains=258
+FakeNewsCorpus scanned=130000, retained=71030, domains=262
+FakeNewsCorpus scanned=140000, retained=75352, domains=266
+FakeNewsCorpus scanned=150000, retained=80826, domains=267
+FakeNewsCorpus scanned=160000, retained=86465, domains=271
+FakeNewsCorpus scanned=170000, retained=92416, domains=284
+FakeNewsCorpus scanned=180000, retained=95897, domains=287
+FakeNewsCorpus scanned=190000, retained=100799, domains=291
+FakeNewsCorpus scanned=200000, retained=102761, domains=292
+FakeNewsCorpus scanned=210000, retained=106079, domains=293
+FakeNewsCorpus scanned=220000, retained=110955, domains=298
+FakeNewsCorpus scanned=230000, retained=116583, domains=302
+FakeNewsCorpus scanned=240000, retained=120992, domains=310
+FakeNewsCorpus scanned=250000, retained=127246, domains=317
+FakeNewsCorpus scanned=260000, retained=132865, domains=322
+FakeNewsCorpus scanned=270000, retained=137072, domains=324
+FakeNewsCorpus scanned=280000, retained=143212, domains=329
+FakeNewsCorpus scanned=290000, retained=150820, domains=331
+FakeNewsCorpus scanned=300000, retained=158460, domains=331
+FakeNewsCorpus scanned=310000, retained=163530, domains=333
+FakeNewsCorpus scanned=320000, retained=168312, domains=337
+FakeNewsCorpus scanned=330000, retained=169546, domains=338
+FakeNewsCorpus scanned=340000, retained=175732, domains=345
+FakeNewsCorpus scanned=350000, retained=180765, domains=347
+FakeNewsCorpus scanned=360000, retained=186508, domains=353
+FakeNewsCorpus scanned=370000, retained=192785, domains=358
+FakeNewsCorpus scanned=380000, retained=196473, domains=361
+FakeNewsCorpus scanned=390000, retained=199784, domains=361
+FakeNewsCorpus scanned=400000, retained=203266, domains=362
+FakeNewsCorpus scanned=410000, retained=208177, domains=365
+FakeNewsCorpus scanned=420000, retained=214427, domains=366
+FakeNewsCorpus scanned=430000, retained=221809, domains=366
+FakeNewsCorpus scanned=440000, retained=228003, domains=367
+FakeNewsCorpus scanned=450000, retained=233500, domains=367
+FakeNewsCorpus scanned=460000, retained=238507, domains=368
+FakeNewsCorpus scanned=470000, retained=242738, domains=368
+FakeNewsCorpus scanned=480000, retained=244078, domains=368
+FakeNewsCorpus scanned=490000, retained=247081, domains=369
+Importing human fact-checked claims, preserving original splits...
+{
+  "article_rows": 313354,
+  "new_article_rows": 252146,
+  "new_source_counts": {
+    "FakeHealth_scanned": 2237,
+    "FakeHealth_retained": 2146,
+    "FakeNewsCorpus_scanned": 499267,
+    "FakeNewsCorpus_retained": 250000
+  },
+  "FakeNewsCorpus_domains": 370,
+  "protected_artifacts_unchanged": true
+}
+{
+  "records": 47609,
+  "exact_unique_claim_groups": 37696,
+  "collection_records": {
+    "LIAR": 12789,
+    "MultiFC": 34820
+  },
+  "rejected_rows": {
+    "LIAR_bad_columns_or_empty_claim": 2,
+    "MultiFC_bad_columns_or_empty_claim": 22
+  }
+}

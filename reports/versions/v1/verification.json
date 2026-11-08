@@ -1,0 +1,15 @@
+{
+  "unit_tests_passed": 13,
+  "full_saved_experiments_page": "passed",
+  "experiment_tables": 9,
+  "plotly_charts": 1,
+  "tested_scenarios": [
+    "all five pages with full model (agent AppTest)",
+    "heldout article prediction and exact explanation",
+    "20 archive events and one explicit feedback label",
+    "full saved experiment report and boundary plot"
+  ],
+  "server_health": "http://127.0.0.1:8501/_stcore/health",
+  "browser_rendered_with_full_model": true,
+  "visual_review": "Overview inspected; corrected top padding beneath Streamlit header."
+}

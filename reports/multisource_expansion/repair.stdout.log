@@ -1,0 +1,20 @@
+Replayed 100000/499267 source records
+Replayed 150000/499267 source records
+Replayed 200000/499267 source records
+Replayed 250000/499267 source records
+Replayed 300000/499267 source records
+Replayed 350000/499267 source records
+Replayed 400000/499267 source records
+Replayed 450000/499267 source records
+{
+  "created_at_utc": "2026-11-07T14:38:54.336701+00:00",
+  "file": "new_article_provenance.parquet",
+  "old_sha256": "1e0e7e9f6aff5c1c0be6a5f8d4ed128c35050755b2f3421fece5b9c7135c2d7e",
+  "new_sha256": "df9b948c68eb5b9edfb57c1651a90e03c8652ddfe266ee3edaebe205916d3c62",
+  "reason": "Parquet page-header integrity check failed; rebuilt in a unique temporary file from raw source decisions.",
+  "raw_retained_texts_verified": 250000,
+  "source_rows_replayed": 501504,
+  "all_decisions_and_counts_match": true,
+  "readback_passed": true,
+  "implementation_sha256": "aa8f8b3f36ed61ab32ada563de77cb9d829228ee9abce46ccdbc42615f4ba154"
+}

@@ -1,0 +1,8 @@
+id,reason,source_rows,body_variants
+corpus-v3-895c50b8c1921ad1073bf39f,conflicting_labels,4,1
+corpus-v3-441fd047b031e3a13a22fff3,conflicting_labels,4,2
+corpus-v3-5d766a6a1f300c03fc1522ba,conflicting_labels,4,2
+corpus-v3-b4a1e2ac606f317850d4ffe0,conflicting_labels,5,2
+corpus-v3-6ec7c019bea9cd6520c3d5ce,conflicting_labels,2,2
+corpus-v3-12cb6832a41f6cf05e2a2669,raw_ISOT_overlap_not_in_processed_base,1,1
+corpus-v3-14d7e7814f9d6dc696709c79,conflicting_labels,2,2

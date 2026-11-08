@@ -1,0 +1,158 @@
+{
+  "version": "corpus-v3-candidate",
+  "method_version": "welfake-import-1",
+  "created_at_utc": "2026-11-07T11:01:20.615133+00:00",
+  "ISOT_processed_input_rows": 39083,
+  "WELFake_parsed_input_rows": 72134,
+  "WELFake_raw_label_counts": {
+    "1": 37106,
+    "0": 35028
+  },
+  "label_mapping": {
+    "parsed_rows": 72134,
+    "evidence": {
+      "unique_training_copies": 26721,
+      "identity_agreements": 26721,
+      "documented_inverse_agreements": 0,
+      "raw_1_project_1": 16000,
+      "raw_0_project_0": 10721
+    },
+    "examples": [
+      {
+        "row_index": 0,
+        "body_hash": "a798348da33b10cfb5248dad903c4eef0d8bbb864f8b46da569f59de45034753",
+        "raw_label": 1,
+        "existing_training_label": 1
+      },
+      {
+        "row_index": 2,
+        "body_hash": "2401006f17feab7edae919586380c1d9f5d127e48390039f19ee1ac35ffcf8a4",
+        "raw_label": 1,
+        "existing_training_label": 1
+      },
+      {
+        "row_index": 5,
+        "body_hash": "7a9367381380ab7fa8274abb66a0b814a4d5976b9b18599dc854130c4938ad1c",
+        "raw_label": 1,
+        "existing_training_label": 1
+      },
+      {
+        "row_index": 6,
+        "body_hash": "2dc92eff5f13fa60d1fd816fd0458ebfe77fb33986b4281d2b43389acd61c62d",
+        "raw_label": 1,
+        "existing_training_label": 1
+      },
+      {
+        "row_index": 13,
+        "body_hash": "7dfba3e11d2f2d47defe05300f59c8eedac535e5e0e2e2961236447dd1966327",
+        "raw_label": 1,
+        "existing_training_label": 1
+      },
+      {
+        "row_index": 16,
+        "body_hash": "fdbad508a0b98812563690045ae3c887a2e7ded1c3960b84a276ad63e05df249",
+        "raw_label": 1,
+        "existing_training_label": 1
+      },
+      {
+        "row_index": 18,
+        "body_hash": "14fd27a6a181d980ea872cf924e576ea768abfab82c62746bdd58b7149d4126b",
+        "raw_label": 1,
+        "existing_training_label": 1
+      },
+      {
+        "row_index": 19,
+        "body_hash": "94894af1ff41d737ce1e6a22011967aaba11feeac09f71068de13fbf27b15126",
+        "raw_label": 0,
+        "existing_training_label": 0
+      },
+      {
+        "row_index": 22,
+        "body_hash": "5103783a77d4848f7ff56b6238972c42d6a84ac3070946a985bfc7c5e4ddf7a8",
+        "raw_label": 1,
+        "existing_training_label": 1
+      },
+      {
+        "row_index": 23,
+        "body_hash": "e9d97dc15de5cf060bec2fdec695ad7d05900445bac5001dc353fc5fd550cb7e",
+        "raw_label": 1,
+        "existing_training_label": 1
+      },
+      {
+        "row_index": 24,
+        "body_hash": "4b66b5377f33b1b6a86d707de4098402320164bfe1c1bb4f850a26e46050e4f2",
+        "raw_label": 1,
+        "existing_training_label": 1
+      },
+      {
+        "row_index": 25,
+        "body_hash": "e2ecade53a3fc8bc816ffe73fbb3d444ecdf59f87936d3d3e92e28e7a7d96387",
+        "raw_label": 1,
+        "existing_training_label": 1
+      }
+    ],
+    "identity_agreement_rate": 1.0,
+    "documented_inverse_agreement_rate": 0.0,
+    "effective_convention": "verified_identity",
+    "documentation_discrepancy": true,
+    "basis": "Encoding reconciliation from identical articles already labelled in ISOT TRAIN; no predictions, validation/test labels, or model-score maximization.",
+    "limitation": "Identical-content agreement resolves code orientation for this artifact; it does not independently verify factual truth.",
+    "raw_csv_sha256": "665331424230fc452e9482c3547a6a199a2c29745ade8d236950d1d105223773",
+    "ISOT_corpus_sha256": "9f9de88b83bc6d88385245134e3ba1bd95dc3f7c2e6d1b797ce582899decbac9",
+    "audit_method": "train-exact-copy-label-orientation-v1"
+  },
+  "processing_counts": {
+    "ISOT_raw_rows": 39083,
+    "ISOT_missing_or_short_body": 811,
+    "ISOT_exact_duplicate_rows": 268,
+    "WELFake_raw_rows": 72134,
+    "welfake_rows_matching_raw_ISOT": 43767,
+    "WELFake_exact_duplicate_rows": 46598,
+    "WELFake_missing_or_short_body": 1843,
+    "near_duplicate_edges": 482,
+    "verified_candidate_pairs": 26357,
+    "capped_bucket_queries": 0
+  },
+  "exact_unique_body_groups": 61697,
+  "retained_unique_article_clusters": 61208,
+  "new_unique_clusters_vs_all_raw_ISOT": 23276,
+  "new_candidates_unassigned": 23274,
+  "eligibility_counts": {
+    "legacy_train": 26356,
+    "reserved_legacy_validation": 5770,
+    "reserved_legacy_test": 5806,
+    "new_candidate_unassigned": 23274,
+    "reserved_external_seen": 2
+  },
+  "retained_label_counts": {
+    "1": 26922,
+    "0": 34286
+  },
+  "collection_combinations": {
+    "ISOT+WELFake": 37932,
+    "WELFake": 23276
+  },
+  "quarantined_clusters": 7,
+  "quarantine_reasons": {
+    "conflicting_labels": 6,
+    "raw_ISOT_overlap_not_in_processed_base": 1
+  },
+  "minimum_body_words": 20,
+  "deduplication": {
+    "exact": "SHA-256 of NFKC/lowercased publisher-cleaned body word sequence; includes negation.",
+    "near_candidate": "64-bit SimHash (4x16-bit bands, Hamming <=3) OR identical first/last 16-word body anchors; length ratio >=0.85.",
+    "near_confirmation": "Word 5-shingle Jaccard >=0.85; connected components.",
+    "limit": "Approximate candidate search, max 300 entries per queried bucket; not exhaustive semantic/paraphrase deduplication."
+  },
+  "partition_policy": "Candidate data only, split=unassigned. Frozen ISOT validation/test and already-seen external headline matches are reserved, including near-body clusters.",
+  "missing_dates": "WELFake supplies no publication dates; new records keep null, never fabricated dates.",
+  "publisher_provenance": "Collection names are recorded. WELFake does not identify the original publisher per row; it is not counted as a new independent publisher.",
+  "rights": "Local research import. Public redistribution rights not established.",
+  "frozen_model_retrained": false,
+  "protected_hashes_before": {
+    "active_model": "2e6d20502b10dcc654c3d12a81be0c3db305262782bafabe78966aafe5b38287",
+    "original_ISOT_corpus": "9f9de88b83bc6d88385245134e3ba1bd95dc3f7c2e6d1b797ce582899decbac9",
+    "active_version_pointer": "08cb58a1d78f049e522153efff27181411a4dbb0b6a769eea068944325d4610e"
+  },
+  "protected_artifacts_unchanged": true
+}

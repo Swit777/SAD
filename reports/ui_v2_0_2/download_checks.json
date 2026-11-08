@@ -1,0 +1,19 @@
+{
+  "errors": [],
+  "results": [
+    {
+      "file": "project_report.docx",
+      "suggestedFilename": "project_report.docx",
+      "bytes": 49041,
+      "sha256": "17724653c460ddb3f616096795f5bbce3a6274097ab7dcc12da093eb2d9a1e52",
+      "matches": true
+    },
+    {
+      "file": "project_presentation.pptx",
+      "suggestedFilename": "project_presentation.pptx",
+      "bytes": 427466,
+      "sha256": "b7a57342e6d95f9aa97baa76f0f851904efd4af8e5ac1f0ad290f61c68faf063",
+      "matches": true
+    }
+  ]
+}

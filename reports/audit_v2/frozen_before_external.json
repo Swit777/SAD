@@ -1,0 +1,19 @@
+{
+  "frozen_at_utc": "2026-11-07T00:47:59.651130+00:00",
+  "before_fingerprint": "14a199b5c7e7656a0c4333254da82c35fe842974eaab92ac59a0d24df14a16c5",
+  "after_fingerprint": "40a1dd938c683b1797a1e673845e04c05e7a808c4f82b93feb90d859285dae2d",
+  "before_policy": {
+    "threshold": 0.75,
+    "margin": 0.15,
+    "consensus": 1.0,
+    "enabled": true
+  },
+  "after_policy": {
+    "threshold": 0.4,
+    "margin": 0.2,
+    "consensus": 0.6666666666666666,
+    "enabled": true
+  },
+  "protocol_sha256": "b29078acfd46bc4fd753120321df6fa3321be390cc6eb1982151d15f53fb61fe",
+  "rule": "After is the preregistered final candidate regardless of external outcome; no external-driven retuning."
+}

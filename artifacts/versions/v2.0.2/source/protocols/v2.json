@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "purpose": "Research assistance for manual review of English news, not autonomous truth adjudication.",
+  "primary_kpi": "Macro-F1 with bootstrap interval on independent raw headlines; report full-text ISOT separately.",
+  "external_gate": {"macro_f1_min": 0.70, "macro_f1_ci_lower_min": 0.65, "automatic_precision_wilson_lower_min": 0.90, "coverage_min": 0.50},
+  "costs": {"false_fake": 5.0, "false_real": 1.0, "manual_review": 0.15},
+  "policy_constraints": {"class_precision_wilson_lower_min": 0.90, "minimum_auto_count_per_class": 30, "coverage_min": 0.50},
+  "partitions": {
+    "train": "Original chronological train, excluding evaluation labels.",
+    "tuning": "First 40 percent of original validation dates/rows.",
+    "calibration_members": "Next 20 percent of original validation.",
+    "calibration_fusion": "Next 20 percent of original validation.",
+    "policy": "Final 20 percent of original validation.",
+    "internal_reused_test": "Old test already observed in v1; diagnostic, not a new confirmatory test.",
+    "external": "Pinned FakeNewsNet raw CSV titles, evaluated only after candidate and policy are frozen."
+  },
+  "feature_rule": "Remove predeclared publisher/contact/byline/social boilerplate. ANOVA and SHAP are diagnostics, never independent validation or a rule that high importance is bad.",
+  "selection": {"logistic_C": [0.25, 1.0, 4.0], "sgd_alpha": [0.0001, 0.001], "complement_nb_alpha": [0.5, 1.0]},
+  "calibration": "Member Platt calibrators and fusion Platt calibrator fit on separate chronological subsets.",
+  "consensus_grid": {"threshold": [0.25, 0.75, 0.05], "margin": [0, 0.05, 0.1, 0.15, 0.2], "minimum_agreement": [0.6666666666666666, 1.0]},
+  "external_commit": "654361e1c8d5baa751baf1dac5032df621652280",
+  "external_unit": "Headline only. No tweet hydration or publisher scraping. Compare with ISOT headline-only diagnostic.",
+  "external_reuse_rule": "Never tune on external labels. A failed release gate remains failed; future tuning requires a new independent external set.",
+  "negative_controls": {"permutations": 19, "train_sample": 1600, "heldout_sample": 600, "selection_fit": "ANOVA selector refitted for every shuffled training-label vector."},
+  "bootstrap_repetitions": 200,
+  "seed": 42,
+  "legal_scope_assumption": "Local noncommercial academic research in Moldova; no redistribution/public deployment clearance asserted."
+}

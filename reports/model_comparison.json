@@ -1,0 +1,393 @@
+{
+  "created_at_utc": "2026-11-07T22:05:01.502336+00:00",
+  "adopted": false,
+  "comparison": [
+    {
+      "model": "full / current",
+      "format": "full",
+      "family": "current",
+      "validation_f1_macro": 0.9380898821104318,
+      "tuning_false_fake_rate": 0.06755260243632337,
+      "selection_objective": 0.9347122519886156
+    },
+    {
+      "model": "full / mean_logit C=0.01",
+      "format": "full",
+      "family": "mean_logit C=0.01",
+      "validation_f1_macro": 0.9380876953338749,
+      "tuning_false_fake_rate": 0.0681063122923588,
+      "selection_objective": 0.9346823797192569
+    },
+    {
+      "model": "full / mean_logit C=0.1",
+      "format": "full",
+      "family": "mean_logit C=0.1",
+      "validation_f1_macro": 0.9380898821104318,
+      "tuning_false_fake_rate": 0.06755260243632337,
+      "selection_objective": 0.9347122519886156
+    },
+    {
+      "model": "full / mean_logit C=1.0",
+      "format": "full",
+      "family": "mean_logit C=1.0",
+      "validation_f1_macro": 0.9380898821104318,
+      "tuning_false_fake_rate": 0.06755260243632337,
+      "selection_objective": 0.9347122519886156
+    },
+    {
+      "model": "full / member_logits C=0.01",
+      "format": "full",
+      "family": "member_logits C=0.01",
+      "validation_f1_macro": 0.9518169303775594,
+      "tuning_false_fake_rate": 0.05370985603543743,
+      "selection_objective": 0.9491314375757876
+    },
+    {
+      "model": "full / member_logits C=0.1",
+      "format": "full",
+      "family": "member_logits C=0.1",
+      "validation_f1_macro": 0.9550470802963822,
+      "tuning_false_fake_rate": 0.050387596899224806,
+      "selection_objective": 0.952527700451421
+    },
+    {
+      "model": "full / member_logits C=1.0",
+      "format": "full",
+      "family": "member_logits C=1.0",
+      "validation_f1_macro": 0.9539735617701537,
+      "tuning_false_fake_rate": 0.050387596899224806,
+      "selection_objective": 0.9514541819251925
+    },
+    {
+      "model": "short_prose / current",
+      "format": "short_prose",
+      "family": "current",
+      "validation_f1_macro": 0.9259649280541037,
+      "tuning_false_fake_rate": 0.08250276854928018,
+      "selection_objective": 0.9218397896266397
+    },
+    {
+      "model": "short_prose / mean_logit C=0.01",
+      "format": "short_prose",
+      "family": "mean_logit C=0.01",
+      "validation_f1_macro": 0.9275829437267604,
+      "tuning_false_fake_rate": 0.08028792912513842,
+      "selection_objective": 0.9235685472705035
+    },
+    {
+      "model": "short_prose / mean_logit C=0.1",
+      "format": "short_prose",
+      "family": "mean_logit C=0.1",
+      "validation_f1_macro": 0.9265241300003293,
+      "tuning_false_fake_rate": 0.07751937984496124,
+      "selection_objective": 0.9226481610080812
+    },
+    {
+      "model": "short_prose / mean_logit C=1.0",
+      "format": "short_prose",
+      "family": "mean_logit C=1.0",
+      "validation_f1_macro": 0.9262561990743796,
+      "tuning_false_fake_rate": 0.07751937984496124,
+      "selection_objective": 0.9223802300821315
+    },
+    {
+      "model": "short_prose / member_logits C=0.01",
+      "format": "short_prose",
+      "family": "member_logits C=0.01",
+      "validation_f1_macro": 0.9292058809457996,
+      "tuning_false_fake_rate": 0.0769656699889258,
+      "selection_objective": 0.9253575974463533
+    },
+    {
+      "model": "short_prose / member_logits C=0.1",
+      "format": "short_prose",
+      "family": "member_logits C=0.1",
+      "validation_f1_macro": 0.9313686928574505,
+      "tuning_false_fake_rate": 0.0725359911406423,
+      "selection_objective": 0.9277418933004183
+    },
+    {
+      "model": "short_prose / member_logits C=1.0",
+      "format": "short_prose",
+      "family": "member_logits C=1.0",
+      "validation_f1_macro": 0.9313731428371701,
+      "tuning_false_fake_rate": 0.07142857142857142,
+      "selection_objective": 0.9278017142657415
+    },
+    {
+      "model": "headline / current",
+      "format": "headline",
+      "family": "current",
+      "validation_f1_macro": 0.8890713613870562,
+      "tuning_false_fake_rate": 0.12181616832779624,
+      "selection_objective": 0.8829805529706665
+    },
+    {
+      "model": "headline / mean_logit C=0.01",
+      "format": "headline",
+      "family": "mean_logit C=0.01",
+      "validation_f1_macro": 0.8879213569427871,
+      "tuning_false_fake_rate": 0.13122923588039867,
+      "selection_objective": 0.8813598951487671
+    },
+    {
+      "model": "headline / mean_logit C=0.1",
+      "format": "headline",
+      "family": "mean_logit C=0.1",
+      "validation_f1_macro": 0.8874035296319538,
+      "tuning_false_fake_rate": 0.12956810631229235,
+      "selection_objective": 0.8809251243163392
+    },
+    {
+      "model": "headline / mean_logit C=1.0",
+      "format": "headline",
+      "family": "mean_logit C=1.0",
+      "validation_f1_macro": 0.8871367187853658,
+      "tuning_false_fake_rate": 0.12956810631229235,
+      "selection_objective": 0.8806583134697512
+    },
+    {
+      "model": "headline / member_logits C=0.01",
+      "format": "headline",
+      "family": "member_logits C=0.01",
+      "validation_f1_macro": 0.8909078069405086,
+      "tuning_false_fake_rate": 0.1256921373200443,
+      "selection_objective": 0.8846232000745065
+    },
+    {
+      "model": "headline / member_logits C=0.1",
+      "format": "headline",
+      "family": "member_logits C=0.1",
+      "validation_f1_macro": 0.8909223120520093,
+      "tuning_false_fake_rate": 0.12403100775193798,
+      "selection_objective": 0.8847207616644124
+    },
+    {
+      "model": "headline / member_logits C=1.0",
+      "format": "headline",
+      "family": "member_logits C=1.0",
+      "validation_f1_macro": 0.8898497558522642,
+      "tuning_false_fake_rate": 0.12458471760797342,
+      "selection_objective": 0.8836205199718655
+    }
+  ],
+  "tuning": [
+    {
+      "format": "full",
+      "selected": "member_logits C=0.1",
+      "before": {
+        "accuracy": 0.9381554181231514,
+        "f1_macro": 0.9380898821104318,
+        "f1_fake": 0.9401041666666666,
+        "precision": 0.9366891541255838,
+        "recall": 0.9435441714584423,
+        "roc_auc": 0.9823898267898317,
+        "average_precision": 0.9825864162453252,
+        "brier": 0.047091149219789095,
+        "log_loss": 0.1664145232252005,
+        "confusion_matrix": [
+          [
+            1684,
+            122
+          ],
+          [
+            108,
+            1805
+          ]
+        ],
+        "rows": 3719,
+        "threshold": 0.5,
+        "false_fake_rate": 0.06755260243632337,
+        "real_recall": 0.9324473975636767,
+        "macro_f1_ci95": [
+          0.9296690987009106,
+          0.9430483832602976
+        ],
+        "false_fake_rate_ci95": [
+          0.06197000074543885,
+          0.07626023109686571
+        ],
+        "ci_method": "200 news-group bootstraps; paired true/fake stories resampled together when available."
+      },
+      "after": {
+        "accuracy": 0.9524065609034686,
+        "f1_macro": 0.9523972544045138,
+        "f1_fake": 0.9530628480509149,
+        "precision": 0.9671689989235738,
+        "recall": 0.9393622582331417,
+        "roc_auc": 0.9900152769504451,
+        "average_precision": 0.9902574277931898,
+        "brier": 0.03597146428913617,
+        "log_loss": 0.12688593998390593,
+        "confusion_matrix": [
+          [
+            1745,
+            61
+          ],
+          [
+            116,
+            1797
+          ]
+        ],
+        "rows": 3719,
+        "threshold": 0.65,
+        "false_fake_rate": 0.033776301218161685,
+        "real_recall": 0.9662236987818383,
+        "macro_f1_ci95": [
+          0.9471450150223455,
+          0.9583039131902036
+        ],
+        "false_fake_rate_ci95": [
+          0.030115201369761035,
+          0.041346398813091954
+        ],
+        "ci_method": "200 news-group bootstraps; paired true/fake stories resampled together when available."
+      }
+    },
+    {
+      "format": "short_prose",
+      "selected": "member_logits C=1.0",
+      "before": {
+        "accuracy": 0.9265931702070449,
+        "f1_macro": 0.9265334874608575,
+        "f1_fake": 0.9286274509803921,
+        "precision": 0.9288702928870293,
+        "recall": 0.9283847360167277,
+        "roc_auc": 0.9783688454411416,
+        "average_precision": 0.9782497308496101,
+        "brier": 0.05464936399143177,
+        "log_loss": 0.18652429856022576,
+        "confusion_matrix": [
+          [
+            1670,
+            136
+          ],
+          [
+            137,
+            1776
+          ]
+        ],
+        "rows": 3719,
+        "threshold": 0.525,
+        "false_fake_rate": 0.0753045404208195,
+        "real_recall": 0.9246954595791805,
+        "macro_f1_ci95": [
+          0.9189931448218168,
+          0.9328887610133142
+        ],
+        "false_fake_rate_ci95": [
+          0.07103294588863582,
+          0.09368799454501858
+        ],
+        "ci_method": "200 news-group bootstraps; paired true/fake stories resampled together when available."
+      },
+      "after": {
+        "accuracy": 0.9123420274267277,
+        "f1_macro": 0.9123082402308986,
+        "f1_fake": 0.9105869445968184,
+        "precision": 0.9578765147143682,
+        "recall": 0.8677469942498693,
+        "roc_auc": 0.9800361980944045,
+        "average_precision": 0.9801183114295545,
+        "brier": 0.05235808671230477,
+        "log_loss": 0.1794715637195151,
+        "confusion_matrix": [
+          [
+            1733,
+            73
+          ],
+          [
+            253,
+            1660
+          ]
+        ],
+        "rows": 3719,
+        "threshold": 0.75,
+        "false_fake_rate": 0.040420819490586936,
+        "real_recall": 0.959579180509413,
+        "macro_f1_ci95": [
+          0.9038261342446912,
+          0.9216677276291417
+        ],
+        "false_fake_rate_ci95": [
+          0.03410881697854084,
+          0.056223212144826756
+        ],
+        "ci_method": "200 news-group bootstraps; paired true/fake stories resampled together when available."
+      }
+    },
+    {
+      "format": "headline",
+      "selected": "member_logits C=0.1",
+      "before": {
+        "accuracy": 0.8908308685130412,
+        "f1_macro": 0.8907404255664021,
+        "f1_fake": 0.893883951907998,
+        "precision": 0.893883951907998,
+        "recall": 0.893883951907998,
+        "roc_auc": 0.9557289721952554,
+        "average_precision": 0.9555686716290731,
+        "brier": 0.08212086073650329,
+        "log_loss": 0.2677932484833719,
+        "confusion_matrix": [
+          [
+            1603,
+            203
+          ],
+          [
+            203,
+            1710
+          ]
+        ],
+        "rows": 3719,
+        "threshold": 0.525,
+        "false_fake_rate": 0.1124031007751938,
+        "real_recall": 0.8875968992248062,
+        "macro_f1_ci95": [
+          0.8827761244254113,
+          0.9009902793205132
+        ],
+        "false_fake_rate_ci95": [
+          0.0998950985078859,
+          0.12543231231252955
+        ],
+        "ci_method": "200 news-group bootstraps; paired true/fake stories resampled together when available."
+      },
+      "after": {
+        "accuracy": 0.8720086044635654,
+        "f1_macro": 0.8718774245845637,
+        "f1_fake": 0.8677777777777778,
+        "precision": 0.9259039715471251,
+        "recall": 0.8165185572399373,
+        "roc_auc": 0.9590981215545091,
+        "average_precision": 0.9591615155359786,
+        "brier": 0.07892102319826048,
+        "log_loss": 0.25898315557082735,
+        "confusion_matrix": [
+          [
+            1681,
+            125
+          ],
+          [
+            351,
+            1562
+          ]
+        ],
+        "rows": 3719,
+        "threshold": 0.675,
+        "false_fake_rate": 0.06921373200442968,
+        "real_recall": 0.9307862679955703,
+        "macro_f1_ci95": [
+          0.8647218141997824,
+          0.8807834529680818
+        ],
+        "false_fake_rate_ci95": [
+          0.06204118229037844,
+          0.07704235061664062
+        ],
+        "ci_method": "200 news-group bootstraps; paired true/fake stories resampled together when available."
+      }
+    }
+  ],
+  "reason": "Preregistered tuning adoption criteria were not met. Canonical model left unchanged."
+}
